@@ -134,6 +134,12 @@
     <Compile Include="Formularios\Formularios Base\FormListadoBase.Designer.cs">
       <DependentUpon>FormListadoBase.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\Listados\FormListadoTags.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Listados\FormListadoTags.Designer.cs">
+      <DependentUpon>FormListadoTags.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\Listados\FormListadoCursos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -238,6 +244,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Formularios Base\FormMantBase.resx">
       <DependentUpon>FormMantBase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Listados\FormListadoTags.resx">
+      <DependentUpon>FormListadoTags.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Listados\FormListadoCursos.resx">
       <DependentUpon>FormListadoCursos.cs</DependentUpon>
@@ -454,6 +463,7 @@
   <ItemGroup>
     <Content Include="check.ico" />
     <Content Include="icon.ico" />
+    <None Include="Resources\tagb.png" />
     <None Include="Resources\house.png" />
     <None Include="Resources\teacherB.png" />
     <None Include="Resources\config1.png" />

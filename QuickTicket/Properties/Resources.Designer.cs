@@ -533,6 +533,16 @@ namespace QuickBill_SP.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap tagb {
+            get {
+                object obj = ResourceManager.GetObject("tagb", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap teacherB {
             get {
                 object obj = ResourceManager.GetObject("teacherB", resourceCulture);

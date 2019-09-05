@@ -64,6 +64,7 @@
   <ItemGroup>
     <Compile Include="Entidades\Nivel.cs" />
     <Compile Include="Entidades\Profesor.cs" />
+    <Compile Include="Entidades\Tag.cs" />
     <Compile Include="Estudiante.cs" />
     <Compile Include="Conexion.cs" />
     <Compile Include="Curso.cs" />
@@ -73,6 +74,7 @@
     <Compile Include="Nivel.cs" />
     <Compile Include="Profesor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tag.cs" />
     <Compile Include="Usuario.cs" />
   </ItemGroup>
   <ItemGroup>
