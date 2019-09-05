@@ -33,8 +33,6 @@
             this.button2 = new System.Windows.Forms.Button();
             this.btnProveedor = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.panel8 = new System.Windows.Forms.Panel();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.btnArticulo = new System.Windows.Forms.Button();
             this.btnCompras = new System.Windows.Forms.Button();
             this.btnInventario = new System.Windows.Forms.Button();
@@ -48,8 +46,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMaximize)).BeginInit();
             this.panel5.SuspendLayout();
-            this.panel8.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.panel6.SuspendLayout();
             this.panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -65,7 +61,6 @@
             this.panel5.Controls.Add(this.button2);
             this.panel5.Controls.Add(this.btnProveedor);
             this.panel5.Controls.Add(this.button1);
-            this.panel5.Controls.Add(this.panel8);
             this.panel5.Controls.Add(this.btnArticulo);
             this.panel5.Controls.Add(this.btnCompras);
             this.panel5.Controls.Add(this.btnInventario);
@@ -130,26 +125,6 @@
             this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
-            // 
-            // panel8
-            // 
-            this.panel8.BackColor = System.Drawing.Color.Transparent;
-            this.panel8.Controls.Add(this.pictureBox3);
-            this.panel8.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel8.Location = new System.Drawing.Point(0, 410);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(200, 150);
-            this.panel8.TabIndex = 9;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox3.Location = new System.Drawing.Point(33, 4);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(140, 140);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 107;
-            this.pictureBox3.TabStop = false;
             // 
             // btnArticulo
             // 
@@ -333,8 +308,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMaximize)).EndInit();
             this.panel5.ResumeLayout(false);
-            this.panel8.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.panel6.ResumeLayout(false);
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
@@ -355,8 +328,6 @@
         private System.Windows.Forms.Button btnCompras;
         private System.Windows.Forms.Button btnCotización;
         private System.Windows.Forms.Button btnClientes;
-        private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button btnProveedor;
         private System.Windows.Forms.Button button1;

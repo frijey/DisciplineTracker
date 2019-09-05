@@ -14,12 +14,12 @@ using Modelo;
 
 namespace Discipline_Tracker
 {
-    public partial class FormEstudiante : FormMantBase
+    public partial class FormProfesor : FormMantBase
     {
         //Clases y Variables
-        Modelo.Estudiante estudiante = new Modelo.Estudiante();
+        Modelo.Profesor profesor = new Modelo.Profesor();
 
-        public FormEstudiante()
+        public FormProfesor()
         {
             InitializeComponent();
         }
@@ -28,19 +28,20 @@ namespace Discipline_Tracker
         {
             try
             {
-                //Guardar Estudiante
+                //Guardar Profesor
                 if (tools.ValidarControles(this))
                 {
-                    estudiante.id_estudiante = isNuevoRegistro ? 0 : Convert.ToInt32(txtCodigo.Text);
-                    estudiante.nombre = txtNombre.Text;
-                    estudiante.apellido = txtApellido.Text;
-                    estudiante.curso = (int)cmbCurso.SelectedValue;
-                    estudiante.estado = chkEstado.Checked ? "A" : "I";
+                    profesor.id_profe = isNuevoRegistro ? 0 : Convert.ToInt32(txtCodigo.Text);
+                    profesor.nombre = txtNombre.Text;
+                    profesor.apellido = txtApellido.Text;
+                    profesor.email = txtEmail.Text;
+                    profesor.contacto = txtContacto.Text;
+                    profesor.estado = chkEstado.Checked ? "A" : "I";
 
-                    int id_nuevo_estudiante = estudiante.Sentencia(estudiante, isNuevoRegistro ? "I" : "U");
-                    txtCodigo.Text = isNuevoRegistro ? id_nuevo_estudiante.ToString() : estudiante.id_estudiante.ToString();
+                    int id_nuevo_estudiante = profesor.Sentencia(profesor, isNuevoRegistro ? "I" : "U");
+                    txtCodigo.Text = isNuevoRegistro ? id_nuevo_estudiante.ToString() : profesor.id_profe.ToString();
 
-                    tools.MensajeNormal(this, "Estudiante guardado con éxito");
+                    tools.MensajeNormal(this, "Profesor guardado con éxito");
                     isNuevoRegistro = false;
                     tools.DeshabilitarControles(this);
                     FormatearBotones(ProcesoBotones.Guardar);
@@ -56,10 +57,10 @@ namespace Discipline_Tracker
 
         private void ptbListado_Click(object sender, EventArgs e)
         {
-            Form f = new FormListadoEstudiantes();
+            Form f = new FormListadoProfesores();
             f.ShowDialog();
 
-            int idEstudianteSeleccionado = (f as FormListadoEstudiantes).SelectedItem;
+            int idEstudianteSeleccionado = (f as FormListadoProfesores).SelectedItem;
 
             if (idEstudianteSeleccionado != 0)
                 tools.FuncionLoading(this, async () =>
@@ -79,17 +80,18 @@ namespace Discipline_Tracker
 
         private async Task<bool> CargarEstudiante(int idEstudianteACargar)
         {
-            //Cargar estudiante en base a un id...
+            //Cargar profesor en base a un id...
             try
             {
-                string jsonEstudiante = tools.DataTableToJSONWithStringBuilder(estudiante.SEstudiante(idEstudianteACargar.ToString()));
-                estudiante = JsonConvert.DeserializeObject<Estudiante>(jsonEstudiante);
+                string jsonEstudiante = tools.DataTableToJSONWithStringBuilder(profesor.SProfesor(idEstudianteACargar.ToString()));
+                profesor = JsonConvert.DeserializeObject<Profesor>(jsonEstudiante);
 
-                txtCodigo.Text = estudiante.id_estudiante.ToString();
-                txtNombre.Text = estudiante.nombre;
-                txtApellido.Text = estudiante.apellido;
-                cmbCurso.SelectedValue = estudiante.curso;
-                chkEstado.Checked = estudiante.estado.ToUpper() == "A" ? true : false;
+                txtCodigo.Text = profesor.id_profe.ToString();
+                txtNombre.Text = profesor.nombre;
+                txtApellido.Text = profesor.apellido;
+                txtEmail.Text = profesor.email;
+                txtContacto.Text = profesor.contacto;
+                chkEstado.Checked = profesor.estado.ToUpper() == "A" ? true : false;
 
                 isNuevoRegistro = false;
                 tools.DeshabilitarControles(this);
@@ -144,10 +146,10 @@ namespace Discipline_Tracker
         {
             try
             {
-                if (tools.MensajeOkCansel($"¿Seguro que desea eliminar el estudiante #{txtCodigo.Text}?"))
+                if (tools.MensajeOkCansel($"¿Seguro que desea eliminar el profesor #{txtCodigo.Text}?"))
                 {
-                    estudiante.id_estudiante = Convert.ToInt32(txtCodigo.Text);
-                    estudiante.Sentencia(estudiante, "D");
+                    profesor.id_profe = Convert.ToInt32(txtCodigo.Text);
+                    profesor.Sentencia(profesor, "D");
                     tools.LimpiarControles(this);
                     tools.DeshabilitarControles(this);
                     FormatearBotones(ProcesoBotones.CancelarNuevoRegistro);
@@ -165,18 +167,6 @@ namespace Discipline_Tracker
                 chkEstado.Text = "                   Activo                 ";
             else
                 chkEstado.Text = "             Desactivado             ";
-        }
-
-        private void FormEstudiante_Load(object sender, EventArgs e)
-        {
-            CargarComboBoxCursos();
-        }
-
-        public void CargarComboBoxCursos()
-        {
-            cmbCurso.ValueMember = "id_curso";
-            cmbCurso.DisplayMember = "nombre_curso";
-            cmbCurso.DataSource = new Curso().ListadoGeneral();
         }
 
     }

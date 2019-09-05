@@ -190,7 +190,8 @@ namespace Discipline_Tracker
                     TabStop = false
                 };
 
-                Parent.Controls.Add(statusPanel);
+                if (this.Visible)
+                    Parent.Controls.Add(statusPanel);
 
             }
             catch { }

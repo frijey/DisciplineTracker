@@ -46,7 +46,8 @@ namespace Discipline_Tracker
 
         private void btnCompra_Click(object sender, EventArgs e)
         {
-
+            Form F = new FormProfesor();
+            F.ShowDialog();
         }
 
         private void btnClientes_Click(object sender, EventArgs e)
