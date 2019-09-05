@@ -1,0 +1,758 @@
+DROP procedure IF EXISTS `SListaArticuloPorCod_artOPorNom_art`;
+CREATE DEFINER=`root`@`%` PROCEDURE `SListaArticuloPorCod_artOPorNom_art`(IN prm_parametro varchar(45))
+BEGIN
+SELECT 
+articulo.*
+FROM
+articulo 
+WHERE			
+articulo.cod_art LIKE prm_parametro OR articulo.nom_art LIKE prm_parametro ORDER BY nom_art;
+END
+
+DROP procedure IF EXISTS `SListaArticuloPorSecuenciaDecod_art`;
+
+CREATE DEFINER=`root`@`%` PROCEDURE `SListaArticuloPorSecuenciaDecod_art`(IN prm_tiposecuencia varchar(5), IN prm_idactual int(11))
+BEGIN
+#Nota: P = primero, A = anterior, S = siguiente y U = último...
+if (upper(prm_tiposecuencia) = "P") then
+
+SELECT * FROM articulo WHERE cod_art = (select min(cod_art) from articulo);
+
+elseif(upper(prm_tiposecuencia) = "A")then
+
+SELECT * FROM articulo WHERE cod_art < prm_idactual ORDER BY cod_art DESC LIMIT 1;
+
+elseif(upper(prm_tiposecuencia) = "S")then
+
+SELECT * FROM articulo WHERE cod_art > prm_idactual ORDER BY cod_art LIMIT 1;
+
+elseif(upper(prm_tiposecuencia) = "U")then
+
+SELECT * FROM articulo WHERE cod_art = (select max(cod_art) from articulo);
+
+end if;
+
+END
+
+DROP procedure IF EXISTS `SArticulo`;
+
+CREATE DEFINER=`root`@`%` PROCEDURE `SArticulo`(IN prm_id int(11))
+BEGIN
+	SELECT 
+		*
+	FROM
+		articulo 
+	WHERE			
+		articulo.cod_art = prm_id;
+END
+
+
+
+CREATE DEFINER =`root`@`%` PROCEDURE `SentenciaArticulo`(accion varchar(5), prm_cod_art int(11), prm_nom_art varchar(45), prm_des_art varchar(45), prm_mar_art varchar(45), prm_cost_art decimal(12,2), prm_prec_art decimal(12,2), prm_exis_art decimal(12,2), prm_cant_min_art decimal(12,2))
+BEGIN
+
+if (upper(accion) = "I") then
+
+insert into articulo(nom_art, des_art, mar_art, cost_art, prec_art, exis_art, cant_min_art) values(prm_nom_art, prm_des_art, prm_mar_art, prm_cost_art, prm_prec_art, prm_exis_art, prm_cant_min_art);
+
+elseif(upper(accion) = "U")then
+
+update articulo set nom_art = prm_nom_art, des_art = prm_des_art, mar_art = prm_mar_art, cost_art = prm_cost_art, prec_art = prm_prec_art, exis_art = prm_exis_art, cant_min_art = prm_cant_min_art where cod_art = prm_cod_art;
+
+elseif(upper(accion) = "D")then
+
+delete from articulo where cod_art = prm_cod_art;
+
+end if;
+select last_insert_id();
+
+END
+
+DROP procedure IF EXISTS `SListaClientePorCod_cliOPorNom_cli`;
+CREATE DEFINER=`root`@`%` PROCEDURE `SListaClientePorCod_cliOPorNom_cli`(IN prm_parametro varchar(45))
+BEGIN
+SELECT 
+cliente.*
+FROM
+cliente 
+WHERE			
+cliente.cod_cli LIKE prm_parametro OR cliente.nom_cli LIKE prm_parametro ORDER BY nom_cli;
+END
+
+DROP procedure IF EXISTS `SListaClientePorSecuenciaDecod_cli`;
+
+CREATE DEFINER=`root`@`%` PROCEDURE `SListaClientePorSecuenciaDecod_cli`(IN prm_tiposecuencia varchar(5), IN prm_idactual int(11))
+BEGIN
+#Nota: P = primero, A = anterior, S = siguiente y U = último...
+if (upper(prm_tiposecuencia) = "P") then
+
+SELECT * FROM cliente WHERE cod_cli = (select min(cod_cli) from cliente);
+
+elseif(upper(prm_tiposecuencia) = "A")then
+
+SELECT * FROM cliente WHERE cod_cli < prm_idactual ORDER BY cod_cli DESC LIMIT 1;
+
+elseif(upper(prm_tiposecuencia) = "S")then
+
+SELECT * FROM cliente WHERE cod_cli > prm_idactual ORDER BY cod_cli LIMIT 1;
+
+elseif(upper(prm_tiposecuencia) = "U")then
+
+SELECT * FROM cliente WHERE cod_cli = (select max(cod_cli) from cliente);
+
+end if;
+
+END
+
+DROP procedure IF EXISTS `SCliente`;
+
+CREATE DEFINER=`root`@`%` PROCEDURE `SCliente`(IN prm_id int(11))
+BEGIN
+	SELECT 
+		*
+	FROM
+		cliente 
+	WHERE			
+		cliente.cod_cli = prm_id;
+END
+
+
+
+CREATE DEFINER =`root`@`%` PROCEDURE `SentenciaCliente`(accion varchar(5), prm_cod_cli int(11), prm_nom_cli varchar(45), prm_ape_cli varchar(45), prm_sex_cli varchar(15), prm_dir_cli varchar(245), prm_sec_cli varchar(45), prm_zon_cli varchar(45), prm_cel_cli varchar(15), prm_ema_cli varchar(45), prm_ced_cli varchar(15))
+BEGIN
+
+if (upper(accion) = "I") then
+
+insert into cliente(nom_cli, ape_cli, sex_cli, dir_cli, sec_cli, zon_cli, cel_cli, ema_cli, ced_cli) values(prm_nom_cli, prm_ape_cli, prm_sex_cli, prm_dir_cli, prm_sec_cli, prm_zon_cli, prm_cel_cli, prm_ema_cli, prm_ced_cli);
+
+elseif(upper(accion) = "U")then
+
+update cliente set nom_cli = prm_nom_cli, ape_cli = prm_ape_cli, sex_cli = prm_sex_cli, dir_cli = prm_dir_cli, sec_cli = prm_sec_cli, zon_cli = prm_zon_cli, cel_cli = prm_cel_cli, ema_cli = prm_ema_cli, ced_cli = prm_ced_cli where cod_cli = prm_cod_cli;
+
+elseif(upper(accion) = "D")then
+
+delete from cliente where cod_cli = prm_cod_cli;
+
+end if;
+select last_insert_id();
+
+END
+
+DROP procedure IF EXISTS `SListaCompraPorCod_comOPorFec_com`;
+CREATE DEFINER=`root`@`%` PROCEDURE `SListaCompraPorCod_comOPorFec_com`(IN prm_parametro varchar(45))
+BEGIN
+SELECT 
+compra.*
+FROM
+compra 
+WHERE			
+compra.cod_com LIKE prm_parametro OR compra.fec_com LIKE prm_parametro ORDER BY fec_com;
+END
+
+DROP procedure IF EXISTS `SListaCompraPorSecuenciaDecod_com`;
+
+CREATE DEFINER=`root`@`%` PROCEDURE `SListaCompraPorSecuenciaDecod_com`(IN prm_tiposecuencia varchar(5), IN prm_idactual int(11))
+BEGIN
+#Nota: P = primero, A = anterior, S = siguiente y U = último...
+if (upper(prm_tiposecuencia) = "P") then
+
+SELECT * FROM compra WHERE cod_com = (select min(cod_com) from compra);
+
+elseif(upper(prm_tiposecuencia) = "A")then
+
+SELECT * FROM compra WHERE cod_com < prm_idactual ORDER BY cod_com DESC LIMIT 1;
+
+elseif(upper(prm_tiposecuencia) = "S")then
+
+SELECT * FROM compra WHERE cod_com > prm_idactual ORDER BY cod_com LIMIT 1;
+
+elseif(upper(prm_tiposecuencia) = "U")then
+
+SELECT * FROM compra WHERE cod_com = (select max(cod_com) from compra);
+
+end if;
+
+END
+
+DROP procedure IF EXISTS `SCompra`;
+
+CREATE DEFINER=`root`@`%` PROCEDURE `SCompra`(IN prm_id int(11))
+BEGIN
+	SELECT 
+		*
+	FROM
+		compra 
+	WHERE			
+		compra.cod_com = prm_id;
+END
+
+
+
+CREATE DEFINER =`root`@`%` PROCEDURE `SentenciaCompra`(accion varchar(5), prm_cod_com int(11), prm_fec_com date, prm_hor_com time, prm_tip_com varchar(45), prm_fk_cod_pro int(11), prm_sub_tot_com decimal(12,2), prm_itb_com decimal(12,2), prm_des_com decimal(12,2), prm_tot_com decimal(12,2))
+BEGIN
+
+if (upper(accion) = "I") then
+
+insert into compra(fec_com, hor_com, tip_com, fk_cod_pro, sub_tot_com, itb_com, des_com, tot_com) values(prm_fec_com, prm_hor_com, prm_tip_com, prm_fk_cod_pro, prm_sub_tot_com, prm_itb_com, prm_des_com, prm_tot_com);
+
+elseif(upper(accion) = "U")then
+
+update compra set fec_com = prm_fec_com, hor_com = prm_hor_com, tip_com = prm_tip_com, fk_cod_pro = prm_fk_cod_pro, sub_tot_com = prm_sub_tot_com, itb_com = prm_itb_com, des_com = prm_des_com, tot_com = prm_tot_com where cod_com = prm_cod_com;
+
+elseif(upper(accion) = "D")then
+
+delete from compra where cod_com = prm_cod_com;
+
+end if;
+select last_insert_id();
+
+END
+
+DROP procedure IF EXISTS `SListaCotizacionPorCod_cotOPorFec_cot`;
+CREATE DEFINER=`root`@`%` PROCEDURE `SListaCotizacionPorCod_cotOPorFec_cot`(IN prm_parametro varchar(45))
+BEGIN
+SELECT 
+cotizacion.*
+FROM
+cotizacion 
+WHERE			
+cotizacion.cod_cot LIKE prm_parametro OR cotizacion.fec_cot LIKE prm_parametro ORDER BY fec_cot;
+END
+
+DROP procedure IF EXISTS `SListaCotizacionPorSecuenciaDecod_cot`;
+
+CREATE DEFINER=`root`@`%` PROCEDURE `SListaCotizacionPorSecuenciaDecod_cot`(IN prm_tiposecuencia varchar(5), IN prm_idactual int(11))
+BEGIN
+#Nota: P = primero, A = anterior, S = siguiente y U = último...
+if (upper(prm_tiposecuencia) = "P") then
+
+SELECT * FROM cotizacion WHERE cod_cot = (select min(cod_cot) from cotizacion);
+
+elseif(upper(prm_tiposecuencia) = "A")then
+
+SELECT * FROM cotizacion WHERE cod_cot < prm_idactual ORDER BY cod_cot DESC LIMIT 1;
+
+elseif(upper(prm_tiposecuencia) = "S")then
+
+SELECT * FROM cotizacion WHERE cod_cot > prm_idactual ORDER BY cod_cot LIMIT 1;
+
+elseif(upper(prm_tiposecuencia) = "U")then
+
+SELECT * FROM cotizacion WHERE cod_cot = (select max(cod_cot) from cotizacion);
+
+end if;
+
+END
+
+DROP procedure IF EXISTS `SCotizacion`;
+
+CREATE DEFINER=`root`@`%` PROCEDURE `SCotizacion`(IN prm_id int(11))
+BEGIN
+	SELECT 
+		*
+	FROM
+		cotizacion 
+	WHERE			
+		cotizacion.cod_cot = prm_id;
+END
+
+
+
+CREATE DEFINER =`root`@`%` PROCEDURE `SentenciaCotizacion`(accion varchar(5), prm_cod_cot int(11), prm_fec_cot date, prm_hor_cot time, prm_tip_cot varchar(45), prm_fk_cod_cli int(11), prm_sub_tot_cot decimal(12,2), prm_itb_cot decimal(12,2), prm_des_cot decimal(12,2), prm_tot_cot decimal(12,2))
+BEGIN
+
+if (upper(accion) = "I") then
+
+insert into cotizacion(fec_cot, hor_cot, tip_cot, fk_cod_cli, sub_tot_cot, itb_cot, des_cot, tot_cot) values(prm_fec_cot, prm_hor_cot, prm_tip_cot, prm_fk_cod_cli, prm_sub_tot_cot, prm_itb_cot, prm_des_cot, prm_tot_cot);
+
+elseif(upper(accion) = "U")then
+
+update cotizacion set fec_cot = prm_fec_cot, hor_cot = prm_hor_cot, tip_cot = prm_tip_cot, fk_cod_cli = prm_fk_cod_cli, sub_tot_cot = prm_sub_tot_cot, itb_cot = prm_itb_cot, des_cot = prm_des_cot, tot_cot = prm_tot_cot where cod_cot = prm_cod_cot;
+
+elseif(upper(accion) = "D")then
+
+delete from cotizacion where cod_cot = prm_cod_cot;
+
+end if;
+select last_insert_id();
+
+END
+
+DROP procedure IF EXISTS `SListaCuadre_cajaPorCod_cua_cajOPorFk_usu_cua_caj`;
+CREATE DEFINER=`root`@`%` PROCEDURE `SListaCuadre_cajaPorCod_cua_cajOPorFk_usu_cua_caj`(IN prm_parametro varchar(45))
+BEGIN
+SELECT 
+cuadre_caja.*
+FROM
+cuadre_caja 
+WHERE			
+cuadre_caja.cod_cua_caj LIKE prm_parametro OR cuadre_caja.fk_usu_cua_caj LIKE prm_parametro ORDER BY fk_usu_cua_caj;
+END
+
+DROP procedure IF EXISTS `SListaCuadre_cajaPorSecuenciaDecod_cua_caj`;
+
+CREATE DEFINER=`root`@`%` PROCEDURE `SListaCuadre_cajaPorSecuenciaDecod_cua_caj`(IN prm_tiposecuencia varchar(5), IN prm_idactual int(11))
+BEGIN
+#Nota: P = primero, A = anterior, S = siguiente y U = último...
+if (upper(prm_tiposecuencia) = "P") then
+
+SELECT * FROM cuadre_caja WHERE cod_cua_caj = (select min(cod_cua_caj) from cuadre_caja);
+
+elseif(upper(prm_tiposecuencia) = "A")then
+
+SELECT * FROM cuadre_caja WHERE cod_cua_caj < prm_idactual ORDER BY cod_cua_caj DESC LIMIT 1;
+
+elseif(upper(prm_tiposecuencia) = "S")then
+
+SELECT * FROM cuadre_caja WHERE cod_cua_caj > prm_idactual ORDER BY cod_cua_caj LIMIT 1;
+
+elseif(upper(prm_tiposecuencia) = "U")then
+
+SELECT * FROM cuadre_caja WHERE cod_cua_caj = (select max(cod_cua_caj) from cuadre_caja);
+
+end if;
+
+END
+
+DROP procedure IF EXISTS `SCuadre_caja`;
+
+CREATE DEFINER=`root`@`%` PROCEDURE `SCuadre_caja`(IN prm_id int(11))
+BEGIN
+	SELECT 
+		*
+	FROM
+		cuadre_caja 
+	WHERE			
+		cuadre_caja.cod_cua_caj = prm_id;
+END
+
+
+
+CREATE DEFINER =`root`@`%` PROCEDURE `SentenciaCuadre_caja`(accion varchar(5), prm_cod_cua_caj int(11), prm_fk_usu_cua_caj int(11), prm_fec_cua_caj date, prm_hor_cua_caj time, prm_tot_cua_caj decimal(12,2))
+BEGIN
+
+if (upper(accion) = "I") then
+
+insert into cuadre_caja(fk_usu_cua_caj, fec_cua_caj, hor_cua_caj, tot_cua_caj) values(prm_fk_usu_cua_caj, prm_fec_cua_caj, prm_hor_cua_caj, prm_tot_cua_caj);
+
+elseif(upper(accion) = "U")then
+
+update cuadre_caja set fk_usu_cua_caj = prm_fk_usu_cua_caj, fec_cua_caj = prm_fec_cua_caj, hor_cua_caj = prm_hor_cua_caj, tot_cua_caj = prm_tot_cua_caj where cod_cua_caj = prm_cod_cua_caj;
+
+elseif(upper(accion) = "D")then
+
+delete from cuadre_caja where cod_cua_caj = prm_cod_cua_caj;
+
+end if;
+select last_insert_id();
+
+END
+
+DROP procedure IF EXISTS `SListaCuenta_por_cobrarPorFk_cod_cliOPorFk_cod_fac`;
+CREATE DEFINER=`root`@`%` PROCEDURE `SListaCuenta_por_cobrarPorFk_cod_cliOPorFk_cod_fac`(IN prm_parametro varchar(45))
+BEGIN
+SELECT 
+cuenta_por_cobrar.*
+FROM
+cuenta_por_cobrar 
+WHERE			
+cuenta_por_cobrar.fk_cod_cli LIKE prm_parametro OR cuenta_por_cobrar.fk_cod_fac LIKE prm_parametro ORDER BY fk_cod_fac;
+END
+
+DROP procedure IF EXISTS `SListaCuenta_por_cobrarPorSecuenciaDefk_cod_cli`;
+
+CREATE DEFINER=`root`@`%` PROCEDURE `SListaCuenta_por_cobrarPorSecuenciaDefk_cod_cli`(IN prm_tiposecuencia varchar(5), IN prm_idactual int(11))
+BEGIN
+#Nota: P = primero, A = anterior, S = siguiente y U = último...
+if (upper(prm_tiposecuencia) = "P") then
+
+SELECT * FROM cuenta_por_cobrar WHERE fk_cod_cli = (select min(fk_cod_cli) from cuenta_por_cobrar);
+
+elseif(upper(prm_tiposecuencia) = "A")then
+
+SELECT * FROM cuenta_por_cobrar WHERE fk_cod_cli < prm_idactual ORDER BY fk_cod_cli DESC LIMIT 1;
+
+elseif(upper(prm_tiposecuencia) = "S")then
+
+SELECT * FROM cuenta_por_cobrar WHERE fk_cod_cli > prm_idactual ORDER BY fk_cod_cli LIMIT 1;
+
+elseif(upper(prm_tiposecuencia) = "U")then
+
+SELECT * FROM cuenta_por_cobrar WHERE fk_cod_cli = (select max(fk_cod_cli) from cuenta_por_cobrar);
+
+end if;
+
+END
+
+DROP procedure IF EXISTS `SCuenta_por_cobrar`;
+
+CREATE DEFINER=`root`@`%` PROCEDURE `SCuenta_por_cobrar`(IN prm_id int(11))
+BEGIN
+	SELECT 
+		*
+	FROM
+		cuenta_por_cobrar 
+	WHERE			
+		cuenta_por_cobrar.fk_cod_cli = prm_id;
+END
+
+
+
+CREATE DEFINER =`root`@`%` PROCEDURE `SentenciaCuenta_por_cobrar`(accion varchar(5), prm_fk_cod_cli int(11), prm_fk_cod_fac int(11), prm_bal_cue_por_cob decimal(12,2), prm_obs_cue_por_cob varchar(100))
+BEGIN
+
+if (upper(accion) = "I") then
+
+insert into cuenta_por_cobrar(fk_cod_fac, bal_cue_por_cob, obs_cue_por_cob) values(prm_fk_cod_fac, prm_bal_cue_por_cob, prm_obs_cue_por_cob);
+
+elseif(upper(accion) = "U")then
+
+update cuenta_por_cobrar set fk_cod_fac = prm_fk_cod_fac, bal_cue_por_cob = prm_bal_cue_por_cob, obs_cue_por_cob = prm_obs_cue_por_cob where fk_cod_cli = prm_fk_cod_cli;
+
+elseif(upper(accion) = "D")then
+
+delete from cuenta_por_cobrar where fk_cod_cli = prm_fk_cod_cli;
+
+end if;
+select last_insert_id();
+
+END
+
+DROP procedure IF EXISTS `SListaDetalle_compraPorFk_cod_comOPorFk_cod_art`;
+CREATE DEFINER=`root`@`%` PROCEDURE `SListaDetalle_compraPorFk_cod_comOPorFk_cod_art`(IN prm_parametro varchar(45))
+BEGIN
+SELECT 
+detalle_compra.*
+FROM
+detalle_compra 
+WHERE			
+detalle_compra.fk_cod_com LIKE prm_parametro OR detalle_compra.fk_cod_art LIKE prm_parametro ORDER BY fk_cod_art;
+END
+
+DROP procedure IF EXISTS `SListaDetalle_compraPorSecuenciaDefk_cod_com`;
+
+CREATE DEFINER=`root`@`%` PROCEDURE `SListaDetalle_compraPorSecuenciaDefk_cod_com`(IN prm_tiposecuencia varchar(5), IN prm_idactual int(11))
+BEGIN
+#Nota: P = primero, A = anterior, S = siguiente y U = último...
+if (upper(prm_tiposecuencia) = "P") then
+
+SELECT * FROM detalle_compra WHERE fk_cod_com = (select min(fk_cod_com) from detalle_compra);
+
+elseif(upper(prm_tiposecuencia) = "A")then
+
+SELECT * FROM detalle_compra WHERE fk_cod_com < prm_idactual ORDER BY fk_cod_com DESC LIMIT 1;
+
+elseif(upper(prm_tiposecuencia) = "S")then
+
+SELECT * FROM detalle_compra WHERE fk_cod_com > prm_idactual ORDER BY fk_cod_com LIMIT 1;
+
+elseif(upper(prm_tiposecuencia) = "U")then
+
+SELECT * FROM detalle_compra WHERE fk_cod_com = (select max(fk_cod_com) from detalle_compra);
+
+end if;
+
+END
+
+DROP procedure IF EXISTS `SDetalle_compra`;
+
+CREATE DEFINER=`root`@`%` PROCEDURE `SDetalle_compra`(IN prm_id int(11))
+BEGIN
+	SELECT 
+		*
+	FROM
+		detalle_compra 
+	WHERE			
+		detalle_compra.fk_cod_com = prm_id;
+END
+
+
+
+CREATE DEFINER =`root`@`%` PROCEDURE `SentenciaDetalle_compra`(accion varchar(5), prm_fk_cod_com int(11), prm_fk_cod_art int(11), prm_nom_det_com varchar(65), prm_can_det_com decimal(12,2), prm_sub_tot_det_com decimal(12,2))
+BEGIN
+
+if (upper(accion) = "I") then
+
+insert into detalle_compra(fk_cod_art, nom_det_com, can_det_com, sub_tot_det_com) values(prm_fk_cod_art, prm_nom_det_com, prm_can_det_com, prm_sub_tot_det_com);
+
+elseif(upper(accion) = "U")then
+
+update detalle_compra set fk_cod_art = prm_fk_cod_art, nom_det_com = prm_nom_det_com, can_det_com = prm_can_det_com, sub_tot_det_com = prm_sub_tot_det_com where fk_cod_com = prm_fk_cod_com;
+
+elseif(upper(accion) = "D")then
+
+delete from detalle_compra where fk_cod_com = prm_fk_cod_com;
+
+end if;
+select last_insert_id();
+
+END
+
+DROP procedure IF EXISTS `SListaDetalle_cuadre_cajaPorFk_cua_cajOPorFk_cod_fac`;
+CREATE DEFINER=`root`@`%` PROCEDURE `SListaDetalle_cuadre_cajaPorFk_cua_cajOPorFk_cod_fac`(IN prm_parametro varchar(45))
+BEGIN
+SELECT 
+detalle_cuadre_caja.*
+FROM
+detalle_cuadre_caja 
+WHERE			
+detalle_cuadre_caja.fk_cua_caj LIKE prm_parametro OR detalle_cuadre_caja.fk_cod_fac LIKE prm_parametro ORDER BY fk_cod_fac;
+END
+
+DROP procedure IF EXISTS `SDetalle_cuadre_caja`;
+
+CREATE DEFINER=`root`@`%` PROCEDURE `SDetalle_cuadre_caja`(IN prm_id int(11))
+BEGIN
+	SELECT 
+		*
+	FROM
+		detalle_cuadre_caja 
+	WHERE			
+		detalle_cuadre_caja.fk_cua_caj = prm_id;
+END
+
+
+
+CREATE DEFINER =`root`@`%` PROCEDURE `SentenciaDetalle_cuadre_caja`(accion varchar(5), prm_fk_cua_caj int(11), prm_fk_cod_fac int(11), prm_fec_det_cua_caj date, prm_hor_det_cua_caj time, prm_tot_det_cua_caj decimal(12,2))
+BEGIN
+
+if (upper(accion) = "I") then
+
+insert into detalle_cuadre_caja(fk_cod_fac, fec_det_cua_caj, hor_det_cua_caj, tot_det_cua_caj) values(prm_fk_cod_fac, prm_fec_det_cua_caj, prm_hor_det_cua_caj, prm_tot_det_cua_caj);
+
+elseif(upper(accion) = "U")then
+
+update detalle_cuadre_caja set fk_cod_fac = prm_fk_cod_fac, fec_det_cua_caj = prm_fec_det_cua_caj, hor_det_cua_caj = prm_hor_det_cua_caj, tot_det_cua_caj = prm_tot_det_cua_caj where fk_cua_caj = prm_fk_cua_caj;
+
+elseif(upper(accion) = "D")then
+
+delete from detalle_cuadre_caja where fk_cua_caj = prm_fk_cua_caj;
+
+end if;
+select last_insert_id();
+
+END
+
+DROP procedure IF EXISTS `SListaFacturaPorCod_facOPorFec_fac`;
+CREATE DEFINER=`root`@`%` PROCEDURE `SListaFacturaPorCod_facOPorFec_fac`(IN prm_parametro varchar(45))
+BEGIN
+SELECT 
+factura.*
+FROM
+factura 
+WHERE			
+factura.cod_fac LIKE prm_parametro OR factura.fec_fac LIKE prm_parametro ORDER BY fec_fac;
+END
+
+DROP procedure IF EXISTS `SFactura`;
+
+CREATE DEFINER=`root`@`%` PROCEDURE `SFactura`(IN prm_id int(11))
+BEGIN
+	SELECT 
+		*
+	FROM
+		factura 
+	WHERE			
+		factura.cod_fac = prm_id;
+END
+
+
+
+CREATE DEFINER =`root`@`%` PROCEDURE `SentenciaFactura`(accion varchar(5), prm_cod_fac int(11), prm_fec_fac date, prm_hor_fac time, prm_tip_fac varchar(45), prm_fk_cod_cli_fac int(11), prm_sub_tot_fac decimal(12,2), prm_itb_fac decimal(12,2), prm_des_fac decimal(12,2), prm_tot_fac decimal(12,2))
+BEGIN
+
+if (upper(accion) = "I") then
+
+insert into factura(fec_fac, hor_fac, tip_fac, fk_cod_cli_fac, sub_tot_fac, itb_fac, des_fac, tot_fac) values(prm_fec_fac, prm_hor_fac, prm_tip_fac, prm_fk_cod_cli_fac, prm_sub_tot_fac, prm_itb_fac, prm_des_fac, prm_tot_fac);
+
+elseif(upper(accion) = "U")then
+
+update factura set fec_fac = prm_fec_fac, hor_fac = prm_hor_fac, tip_fac = prm_tip_fac, fk_cod_cli_fac = prm_fk_cod_cli_fac, sub_tot_fac = prm_sub_tot_fac, itb_fac = prm_itb_fac, des_fac = prm_des_fac, tot_fac = prm_tot_fac where cod_fac = prm_cod_fac;
+
+elseif(upper(accion) = "D")then
+
+delete from factura where cod_fac = prm_cod_fac;
+
+end if;
+select last_insert_id();
+
+END
+
+DROP procedure IF EXISTS `SListaIngresosPorCod_ingOPorFk_cod_fac`;
+CREATE DEFINER=`root`@`%` PROCEDURE `SListaIngresosPorCod_ingOPorFk_cod_fac`(IN prm_parametro varchar(45))
+BEGIN
+SELECT 
+ingresos.*
+FROM
+ingresos 
+WHERE			
+ingresos.cod_ing LIKE prm_parametro OR ingresos.fk_cod_fac LIKE prm_parametro ORDER BY fk_cod_fac;
+END
+
+DROP procedure IF EXISTS `SIngresos`;
+
+CREATE DEFINER=`root`@`%` PROCEDURE `SIngresos`(IN prm_id int(11))
+BEGIN
+	SELECT 
+		*
+	FROM
+		ingresos 
+	WHERE			
+		ingresos.cod_ing = prm_id;
+END
+
+
+
+CREATE DEFINER =`root`@`%` PROCEDURE `SentenciaIngresos`(accion varchar(5), prm_cod_ing int(11), prm_fk_cod_fac int(11), prm_mon_ing decimal(12,2), prm_fec_ing date, prm_hor_ing time, prm_tot_ing decimal(12,2), prm_bal_pen_ing decimal(12,2))
+BEGIN
+
+if (upper(accion) = "I") then
+
+insert into ingresos(fk_cod_fac, mon_ing, fec_ing, hor_ing, tot_ing, bal_pen_ing) values(prm_fk_cod_fac, prm_mon_ing, prm_fec_ing, prm_hor_ing, prm_tot_ing, prm_bal_pen_ing);
+
+elseif(upper(accion) = "U")then
+
+update ingresos set fk_cod_fac = prm_fk_cod_fac, mon_ing = prm_mon_ing, fec_ing = prm_fec_ing, hor_ing = prm_hor_ing, tot_ing = prm_tot_ing, bal_pen_ing = prm_bal_pen_ing where cod_ing = prm_cod_ing;
+
+elseif(upper(accion) = "D")then
+
+delete from ingresos where cod_ing = prm_cod_ing;
+
+end if;
+select last_insert_id();
+
+END
+
+DROP procedure IF EXISTS `SListaProveedorPorCod_proOPorNom_pro`;
+CREATE DEFINER=`root`@`%` PROCEDURE `SListaProveedorPorCod_proOPorNom_pro`(IN prm_parametro varchar(45))
+BEGIN
+SELECT 
+proveedor.*
+FROM
+proveedor 
+WHERE			
+proveedor.cod_pro LIKE prm_parametro OR proveedor.nom_pro LIKE prm_parametro ORDER BY nom_pro;
+END
+
+DROP procedure IF EXISTS `SProveedor`;
+
+CREATE DEFINER=`root`@`%` PROCEDURE `SProveedor`(IN prm_id int(11))
+BEGIN
+	SELECT 
+		*
+	FROM
+		proveedor 
+	WHERE			
+		proveedor.cod_pro = prm_id;
+END
+
+
+
+CREATE DEFINER =`root`@`%` PROCEDURE `SentenciaProveedor`(accion varchar(5), prm_cod_pro int(11), prm_nom_pro varchar(45), prm_tip_pro varchar(45), prm_dir_pro varchar(245), prm_sec_pro varchar(45), prm_zon_pro varchar(45), prm_con_pro varchar(45), prm_ema_pro varchar(45), prm_rnc_pro varchar(15))
+BEGIN
+
+if (upper(accion) = "I") then
+
+insert into proveedor(nom_pro, tip_pro, dir_pro, sec_pro, zon_pro, con_pro, ema_pro, rnc_pro) values(prm_nom_pro, prm_tip_pro, prm_dir_pro, prm_sec_pro, prm_zon_pro, prm_con_pro, prm_ema_pro, prm_rnc_pro);
+
+elseif(upper(accion) = "U")then
+
+update proveedor set nom_pro = prm_nom_pro, tip_pro = prm_tip_pro, dir_pro = prm_dir_pro, sec_pro = prm_sec_pro, zon_pro = prm_zon_pro, con_pro = prm_con_pro, ema_pro = prm_ema_pro, rnc_pro = prm_rnc_pro where cod_pro = prm_cod_pro;
+
+elseif(upper(accion) = "D")then
+
+delete from proveedor where cod_pro = prm_cod_pro;
+
+end if;
+select last_insert_id();
+
+END
+
+DROP procedure IF EXISTS `SListaRolPorCod_rolOPorDes_rol`;
+CREATE DEFINER=`root`@`%` PROCEDURE `SListaRolPorCod_rolOPorDes_rol`(IN prm_parametro varchar(45))
+BEGIN
+SELECT 
+rol.*
+FROM
+rol 
+WHERE			
+rol.cod_rol LIKE prm_parametro OR rol.des_rol LIKE prm_parametro ORDER BY des_rol;
+END
+
+DROP procedure IF EXISTS `SRol`;
+
+CREATE DEFINER=`root`@`%` PROCEDURE `SRol`(IN prm_id int(11))
+BEGIN
+	SELECT 
+		*
+	FROM
+		rol 
+	WHERE			
+		rol.cod_rol = prm_id;
+END
+
+
+
+CREATE DEFINER =`root`@`%` PROCEDURE `SentenciaRol`(accion varchar(5), prm_cod_rol int(11), prm_des_rol varchar(45))
+BEGIN
+
+if (upper(accion) = "I") then
+
+insert into rol(des_rol) values(prm_des_rol);
+
+elseif(upper(accion) = "U")then
+
+update rol set des_rol = prm_des_rol where cod_rol = prm_cod_rol;
+
+elseif(upper(accion) = "D")then
+
+delete from rol where cod_rol = prm_cod_rol;
+
+end if;
+select last_insert_id();
+
+END
+DROP procedure IF EXISTS `SListaUsuarioPorCod_usuOPorNom_usu`;
+CREATE DEFINER=`root`@`%` PROCEDURE `SListaUsuarioPorCod_usuOPorNom_usu`(IN prm_parametro varchar(45))
+BEGIN
+SELECT 
+usuario.*
+FROM
+usuario 
+WHERE			
+usuario.cod_usu LIKE prm_parametro OR usuario.nom_usu LIKE prm_parametro ORDER BY nom_usu;
+END
+
+DROP procedure IF EXISTS `SUsuario`;
+
+CREATE DEFINER=`root`@`%` PROCEDURE `SUsuario`(IN prm_id int(11))
+BEGIN
+	SELECT 
+		*
+	FROM
+		usuario 
+	WHERE			
+		usuario.cod_usu = prm_id;
+END
+
+
+
+CREATE DEFINER =`root`@`%` PROCEDURE `SentenciaUsuario`(accion varchar(5), prm_cod_usu int(11), prm_nom_usu varchar(45), prm_cla_usu varchar(45), prm_tip_usu varchar(45), prm_ema_usu varchar(45), prm_fk_rol int(11))
+BEGIN
+
+if (upper(accion) = "I") then
+
+insert into usuario(nom_usu, cla_usu, tip_usu, ema_usu, fk_rol) values(prm_nom_usu, prm_cla_usu, prm_tip_usu, prm_ema_usu, prm_fk_rol);
+
+elseif(upper(accion) = "U")then
+
+update usuario set nom_usu = prm_nom_usu, cla_usu = prm_cla_usu, tip_usu = prm_tip_usu, ema_usu = prm_ema_usu, fk_rol = prm_fk_rol where cod_usu = prm_cod_usu;
+
+elseif(upper(accion) = "D")then
+
+delete from usuario where cod_usu = prm_cod_usu;
+
+end if;
+select last_insert_id();
+
+END
