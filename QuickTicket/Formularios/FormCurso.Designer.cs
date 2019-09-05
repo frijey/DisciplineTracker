@@ -33,14 +33,14 @@
             this.txtNombre = new Discipline_Tracker.TextBoxRegular();
             this.label2 = new System.Windows.Forms.Label();
             this.txtCodigo = new Discipline_Tracker.TextBoxRegular();
-            this.txtApellido = new Discipline_Tracker.TextBoxRegular();
+            this.txtNumeracion = new Discipline_Tracker.TextBoxRegular();
             this.label4 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.chkEstado = new Discipline_Tracker.CheckBoxEstado();
-            this.txtEmail = new Discipline_Tracker.TextBoxRegular();
             this.label5 = new System.Windows.Forms.Label();
-            this.txtContacto = new Discipline_Tracker.MaskedTextBoxRegular();
             this.label6 = new System.Windows.Forms.Label();
+            this.cmbNivel = new Discipline_Tracker.ComboBoxRegular();
+            this.cmbProfesor = new Discipline_Tracker.ComboBoxRegular();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptbListado)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -103,11 +103,10 @@
             // ptbCliente
             // 
             this.ptbCliente.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ptbCliente.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.ptbCliente.Image = global::QuickBill_SP.Properties.Resources.house;
-            this.ptbCliente.Location = new System.Drawing.Point(647, 99);
+            this.ptbCliente.Location = new System.Drawing.Point(574, 99);
             this.ptbCliente.Name = "ptbCliente";
-            this.ptbCliente.Size = new System.Drawing.Size(174, 170);
+            this.ptbCliente.Size = new System.Drawing.Size(247, 201);
             this.ptbCliente.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.ptbCliente.TabIndex = 1;
             this.ptbCliente.TabStop = false;
@@ -117,18 +116,18 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Gray;
-            this.label3.Location = new System.Drawing.Point(32, 112);
+            this.label3.Location = new System.Drawing.Point(32, 137);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(59, 18);
+            this.label3.Size = new System.Drawing.Size(120, 18);
             this.label3.TabIndex = 108;
-            this.label3.Text = "Nombre";
+            this.label3.Text = "Nombre del Curso";
             // 
             // txtNombre
             // 
             this.txtNombre.BackColor = System.Drawing.Color.White;
             this.txtNombre.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtNombre.CantidadMinima = true;
-            this.txtNombre.CantMin = 5;
+            this.txtNombre.CantMin = 2;
             this.txtNombre.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtNombre.DefaultLimpiarValue = "";
             this.txtNombre.Deshabilitar = true;
@@ -137,7 +136,7 @@
             this.txtNombre.FormatoDinero = false;
             this.txtNombre.Habilitar = true;
             this.txtNombre.Limpiar = true;
-            this.txtNombre.Location = new System.Drawing.Point(32, 133);
+            this.txtNombre.Location = new System.Drawing.Point(32, 158);
             this.txtNombre.MaxLength = 45;
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Obligatorio = true;
@@ -151,7 +150,7 @@
             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(656, 73);
+            this.label2.Location = new System.Drawing.Point(630, 78);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(47, 19);
             this.label2.TabIndex = 136;
@@ -173,7 +172,7 @@
             this.txtCodigo.FormatoDinero = false;
             this.txtCodigo.Habilitar = false;
             this.txtCodigo.Limpiar = true;
-            this.txtCodigo.Location = new System.Drawing.Point(730, 74);
+            this.txtCodigo.Location = new System.Drawing.Point(704, 79);
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.Obligatorio = false;
             this.txtCodigo.ReadOnly = true;
@@ -184,46 +183,46 @@
             this.txtCodigo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtCodigo.TipoDeValidacion = Discipline_Tracker.TiposDeValidacion.Normal;
             // 
-            // txtApellido
+            // txtNumeracion
             // 
-            this.txtApellido.BackColor = System.Drawing.Color.White;
-            this.txtApellido.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtApellido.CantidadMinima = true;
-            this.txtApellido.CantMin = 5;
-            this.txtApellido.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtApellido.DefaultLimpiarValue = "";
-            this.txtApellido.Deshabilitar = true;
-            this.txtApellido.Font = new System.Drawing.Font("Calibri", 10F);
-            this.txtApellido.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.txtApellido.FormatoDinero = false;
-            this.txtApellido.Habilitar = true;
-            this.txtApellido.Limpiar = true;
-            this.txtApellido.Location = new System.Drawing.Point(32, 196);
-            this.txtApellido.MaxLength = 45;
-            this.txtApellido.Name = "txtApellido";
-            this.txtApellido.Obligatorio = true;
-            this.txtApellido.Size = new System.Drawing.Size(350, 17);
-            this.txtApellido.TabEnter = true;
-            this.txtApellido.TabIndex = 1;
-            this.txtApellido.TipoDeValidacion = Discipline_Tracker.TiposDeValidacion.Normal;
+            this.txtNumeracion.BackColor = System.Drawing.Color.White;
+            this.txtNumeracion.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtNumeracion.CantidadMinima = true;
+            this.txtNumeracion.CantMin = 1;
+            this.txtNumeracion.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtNumeracion.DefaultLimpiarValue = "";
+            this.txtNumeracion.Deshabilitar = true;
+            this.txtNumeracion.Font = new System.Drawing.Font("Calibri", 10F);
+            this.txtNumeracion.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.txtNumeracion.FormatoDinero = false;
+            this.txtNumeracion.Habilitar = true;
+            this.txtNumeracion.Limpiar = true;
+            this.txtNumeracion.Location = new System.Drawing.Point(32, 221);
+            this.txtNumeracion.MaxLength = 11;
+            this.txtNumeracion.Name = "txtNumeracion";
+            this.txtNumeracion.Obligatorio = true;
+            this.txtNumeracion.Size = new System.Drawing.Size(100, 17);
+            this.txtNumeracion.TabEnter = true;
+            this.txtNumeracion.TabIndex = 1;
+            this.txtNumeracion.TipoDeValidacion = Discipline_Tracker.TiposDeValidacion.Entero;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Gray;
-            this.label4.Location = new System.Drawing.Point(32, 175);
+            this.label4.Location = new System.Drawing.Point(32, 200);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(61, 18);
+            this.label4.Size = new System.Drawing.Size(84, 18);
             this.label4.TabIndex = 108;
-            this.label4.Text = "Apellido";
+            this.label4.Text = "Numeración";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.Gray;
-            this.label7.Location = new System.Drawing.Point(254, 52);
+            this.label7.Location = new System.Drawing.Point(254, 77);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(49, 18);
             this.label7.TabIndex = 108;
@@ -241,7 +240,7 @@
             this.chkEstado.ForeColor = System.Drawing.Color.Black;
             this.chkEstado.Habilitar = true;
             this.chkEstado.Limpiar = true;
-            this.chkEstado.Location = new System.Drawing.Point(201, 74);
+            this.chkEstado.Location = new System.Drawing.Point(201, 99);
             this.chkEstado.Name = "chkEstado";
             this.chkEstado.Obligatorio = true;
             this.chkEstado.Size = new System.Drawing.Size(155, 23);
@@ -250,72 +249,65 @@
             this.chkEstado.Text = "                   Activo                 ";
             this.chkEstado.UseVisualStyleBackColor = false;
             // 
-            // txtEmail
-            // 
-            this.txtEmail.BackColor = System.Drawing.Color.White;
-            this.txtEmail.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtEmail.CantidadMinima = true;
-            this.txtEmail.CantMin = 5;
-            this.txtEmail.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtEmail.DefaultLimpiarValue = "";
-            this.txtEmail.Deshabilitar = true;
-            this.txtEmail.Font = new System.Drawing.Font("Calibri", 10F);
-            this.txtEmail.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.txtEmail.FormatoDinero = false;
-            this.txtEmail.Habilitar = true;
-            this.txtEmail.Limpiar = true;
-            this.txtEmail.Location = new System.Drawing.Point(32, 263);
-            this.txtEmail.MaxLength = 45;
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Obligatorio = true;
-            this.txtEmail.Size = new System.Drawing.Size(350, 17);
-            this.txtEmail.TabEnter = true;
-            this.txtEmail.TabIndex = 2;
-            this.txtEmail.TipoDeValidacion = Discipline_Tracker.TiposDeValidacion.Email;
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.Gray;
-            this.label5.Location = new System.Drawing.Point(32, 242);
+            this.label5.Location = new System.Drawing.Point(32, 267);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(42, 18);
+            this.label5.Size = new System.Drawing.Size(41, 18);
             this.label5.TabIndex = 108;
-            this.label5.Text = "Email";
-            // 
-            // txtContacto
-            // 
-            this.txtContacto.BackColor = System.Drawing.Color.White;
-            this.txtContacto.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtContacto.CantidadMinima = true;
-            this.txtContacto.CantMin = 5;
-            this.txtContacto.DefaultLimpiarValue = "";
-            this.txtContacto.Deshabilitar = true;
-            this.txtContacto.Font = new System.Drawing.Font("Calibri", 10F);
-            this.txtContacto.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.txtContacto.FormatoDinero = false;
-            this.txtContacto.Habilitar = true;
-            this.txtContacto.Limpiar = true;
-            this.txtContacto.Location = new System.Drawing.Point(32, 326);
-            this.txtContacto.Mask = "(999) 999-9999";
-            this.txtContacto.Name = "txtContacto";
-            this.txtContacto.Obligatorio = true;
-            this.txtContacto.Size = new System.Drawing.Size(350, 17);
-            this.txtContacto.TabEnter = true;
-            this.txtContacto.TabIndex = 3;
-            this.txtContacto.TipoDeValidacion = Discipline_Tracker.TiposDeValidacion.Entero;
+            this.label5.Text = "Nivel";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.Gray;
-            this.label6.Location = new System.Drawing.Point(32, 305);
+            this.label6.Location = new System.Drawing.Point(32, 330);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(63, 18);
+            this.label6.Size = new System.Drawing.Size(61, 18);
             this.label6.TabIndex = 108;
-            this.label6.Text = "Contacto";
+            this.label6.Text = "Profesor";
+            // 
+            // cmbNivel
+            // 
+            this.cmbNivel.BackColor = System.Drawing.Color.White;
+            this.cmbNivel.DefaultLimpiarValue = 0;
+            this.cmbNivel.Deshabilitar = true;
+            this.cmbNivel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbNivel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmbNivel.Font = new System.Drawing.Font("Calibri", 10F);
+            this.cmbNivel.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.cmbNivel.FormattingEnabled = true;
+            this.cmbNivel.Habilitar = true;
+            this.cmbNivel.Limpiar = true;
+            this.cmbNivel.Location = new System.Drawing.Point(32, 288);
+            this.cmbNivel.Name = "cmbNivel";
+            this.cmbNivel.Obligatorio = true;
+            this.cmbNivel.Size = new System.Drawing.Size(400, 23);
+            this.cmbNivel.TabEnter = true;
+            this.cmbNivel.TabIndex = 149;
+            // 
+            // cmbProfesor
+            // 
+            this.cmbProfesor.BackColor = System.Drawing.Color.White;
+            this.cmbProfesor.DefaultLimpiarValue = 0;
+            this.cmbProfesor.Deshabilitar = true;
+            this.cmbProfesor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbProfesor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmbProfesor.Font = new System.Drawing.Font("Calibri", 10F);
+            this.cmbProfesor.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.cmbProfesor.FormattingEnabled = true;
+            this.cmbProfesor.Habilitar = true;
+            this.cmbProfesor.Limpiar = true;
+            this.cmbProfesor.Location = new System.Drawing.Point(32, 351);
+            this.cmbProfesor.Name = "cmbProfesor";
+            this.cmbProfesor.Obligatorio = true;
+            this.cmbProfesor.Size = new System.Drawing.Size(400, 23);
+            this.cmbProfesor.TabEnter = true;
+            this.cmbProfesor.TabIndex = 162;
             // 
             // FormCurso
             // 
@@ -323,17 +315,17 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.canMaximize = false;
             this.ClientSize = new System.Drawing.Size(834, 512);
+            this.Controls.Add(this.cmbProfesor);
+            this.Controls.Add(this.cmbNivel);
             this.Controls.Add(this.chkEstado);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtCodigo);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.txtContacto);
-            this.Controls.Add(this.txtApellido);
+            this.Controls.Add(this.txtNumeracion);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.ptbCliente);
             this.MaximizeBox = false;
@@ -342,13 +334,12 @@
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Mantenimiento de Cliente";
+            this.Load += new System.EventHandler(this.FormCurso_Load);
             this.Controls.SetChildIndex(this.ptbCliente, 0);
             this.Controls.SetChildIndex(this.txtNombre, 0);
-            this.Controls.SetChildIndex(this.txtEmail, 0);
             this.Controls.SetChildIndex(this.label3, 0);
             this.Controls.SetChildIndex(this.label5, 0);
-            this.Controls.SetChildIndex(this.txtApellido, 0);
-            this.Controls.SetChildIndex(this.txtContacto, 0);
+            this.Controls.SetChildIndex(this.txtNumeracion, 0);
             this.Controls.SetChildIndex(this.label4, 0);
             this.Controls.SetChildIndex(this.label6, 0);
             this.Controls.SetChildIndex(this.label7, 0);
@@ -358,6 +349,8 @@
             this.Controls.SetChildIndex(this.panel5, 0);
             this.Controls.SetChildIndex(this.label8, 0);
             this.Controls.SetChildIndex(this.chkEstado, 0);
+            this.Controls.SetChildIndex(this.cmbNivel, 0);
+            this.Controls.SetChildIndex(this.cmbProfesor, 0);
             this.panel5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.ptbListado)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -374,14 +367,14 @@
         private Discipline_Tracker.TextBoxRegular txtNombre;
         public System.Windows.Forms.Label label2;
         public Discipline_Tracker.TextBoxRegular txtCodigo;
-        private Discipline_Tracker.TextBoxRegular txtApellido;
+        private Discipline_Tracker.TextBoxRegular txtNumeracion;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label7;
         private Discipline_Tracker.CheckBoxEstado chkEstado;
-        private TextBoxRegular txtEmail;
         private System.Windows.Forms.Label label5;
-        private MaskedTextBoxRegular txtContacto;
         private System.Windows.Forms.Label label6;
+        private ComboBoxRegular cmbNivel;
+        private ComboBoxRegular cmbProfesor;
     }
 }
 

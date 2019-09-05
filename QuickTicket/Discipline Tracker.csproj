@@ -134,6 +134,12 @@
     <Compile Include="Formularios\Formularios Base\FormListadoBase.Designer.cs">
       <DependentUpon>FormListadoBase.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\Listados\FormListadoCursos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Listados\FormListadoCursos.Designer.cs">
+      <DependentUpon>FormListadoCursos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\Listados\FormListadoProfesores.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -232,6 +238,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Formularios Base\FormMantBase.resx">
       <DependentUpon>FormMantBase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Listados\FormListadoCursos.resx">
+      <DependentUpon>FormListadoCursos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Listados\FormListadoProfesores.resx">
       <DependentUpon>FormListadoProfesores.cs</DependentUpon>

@@ -38,8 +38,8 @@ namespace Discipline_Tracker
                     profesor.contacto = txtContacto.Text;
                     profesor.estado = chkEstado.Checked ? "A" : "I";
 
-                    int id_nuevo_estudiante = profesor.Sentencia(profesor, isNuevoRegistro ? "I" : "U");
-                    txtCodigo.Text = isNuevoRegistro ? id_nuevo_estudiante.ToString() : profesor.id_profe.ToString();
+                    int id_nuevo_profesor = profesor.Sentencia(profesor, isNuevoRegistro ? "I" : "U");
+                    txtCodigo.Text = isNuevoRegistro ? id_nuevo_profesor.ToString() : profesor.id_profe.ToString();
 
                     tools.MensajeNormal(this, "Profesor guardado con éxito");
                     isNuevoRegistro = false;

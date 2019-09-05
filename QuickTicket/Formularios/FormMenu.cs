@@ -34,11 +34,6 @@ namespace Discipline_Tracker
             (sender as Button).BackColor = Color.Transparent;
         }
 
-        private void btnFacturacion_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnCotizacion_Click(object sender, EventArgs e)
         {
 
@@ -79,6 +74,12 @@ namespace Discipline_Tracker
         private void button2_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnCursos_Click(object sender, EventArgs e)
+        {
+            Form F = new FormCurso();
+            F.ShowDialog();
         }
     }
 }

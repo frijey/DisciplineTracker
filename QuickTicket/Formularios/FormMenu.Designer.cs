@@ -38,7 +38,7 @@
             this.btnInventario = new System.Windows.Forms.Button();
             this.btnCotización = new System.Windows.Forms.Button();
             this.btnClientes = new System.Windows.Forms.Button();
-            this.btnFacturación = new System.Windows.Forms.Button();
+            this.btnCursos = new System.Windows.Forms.Button();
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
@@ -66,7 +66,7 @@
             this.panel5.Controls.Add(this.btnInventario);
             this.panel5.Controls.Add(this.btnCotización);
             this.panel5.Controls.Add(this.btnClientes);
-            this.panel5.Controls.Add(this.btnFacturación);
+            this.panel5.Controls.Add(this.btnCursos);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel5.Location = new System.Drawing.Point(800, 32);
             this.panel5.Name = "panel5";
@@ -226,25 +226,25 @@
             this.btnClientes.MouseDown += new System.Windows.Forms.MouseEventHandler(this.ClickDown_Effect);
             this.btnClientes.MouseUp += new System.Windows.Forms.MouseEventHandler(this.ClickUp_DesEffect);
             // 
-            // btnFacturación
+            // btnCursos
             // 
-            this.btnFacturación.BackColor = System.Drawing.Color.Transparent;
-            this.btnFacturación.FlatAppearance.BorderSize = 0;
-            this.btnFacturación.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFacturación.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFacturación.ForeColor = System.Drawing.Color.White;
-            this.btnFacturación.Image = global::QuickBill_SP.Properties.Resources.curso;
-            this.btnFacturación.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnFacturación.Location = new System.Drawing.Point(0, 140);
-            this.btnFacturación.Name = "btnFacturación";
-            this.btnFacturación.Size = new System.Drawing.Size(195, 39);
-            this.btnFacturación.TabIndex = 3;
-            this.btnFacturación.Text = "      Cursos";
-            this.btnFacturación.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnFacturación.UseVisualStyleBackColor = false;
-            this.btnFacturación.Click += new System.EventHandler(this.btnFacturacion_Click);
-            this.btnFacturación.MouseDown += new System.Windows.Forms.MouseEventHandler(this.ClickDown_Effect);
-            this.btnFacturación.MouseUp += new System.Windows.Forms.MouseEventHandler(this.ClickUp_DesEffect);
+            this.btnCursos.BackColor = System.Drawing.Color.Transparent;
+            this.btnCursos.FlatAppearance.BorderSize = 0;
+            this.btnCursos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCursos.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCursos.ForeColor = System.Drawing.Color.White;
+            this.btnCursos.Image = global::QuickBill_SP.Properties.Resources.curso;
+            this.btnCursos.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnCursos.Location = new System.Drawing.Point(0, 140);
+            this.btnCursos.Name = "btnCursos";
+            this.btnCursos.Size = new System.Drawing.Size(195, 39);
+            this.btnCursos.TabIndex = 3;
+            this.btnCursos.Text = "      Cursos";
+            this.btnCursos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCursos.UseVisualStyleBackColor = false;
+            this.btnCursos.Click += new System.EventHandler(this.btnCursos_Click);
+            this.btnCursos.MouseDown += new System.Windows.Forms.MouseEventHandler(this.ClickDown_Effect);
+            this.btnCursos.MouseUp += new System.Windows.Forms.MouseEventHandler(this.ClickUp_DesEffect);
             // 
             // panel6
             // 
@@ -324,7 +324,7 @@
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button btnFacturación;
+        private System.Windows.Forms.Button btnCursos;
         private System.Windows.Forms.Button btnCompras;
         private System.Windows.Forms.Button btnCotización;
         private System.Windows.Forms.Button btnClientes;

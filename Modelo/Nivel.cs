@@ -7,20 +7,17 @@ using MySql.Data.MySqlClient;
 
 namespace Modelo
 {
-    public partial class Curso : Conexion
+    public partial class Nivel : Conexion
     {
 
-        public int Sentencia(Curso d, string Accion)
+        public int Sentencia(Nivel d, string Accion)
         {
             int id = 0;
             using (GetCon())
             {
-                MySqlCommand cmd = new MySqlCommand($"SentenciaCurso('{Accion}',?,?,?,?,?,?)", GetCon());
-                cmd.Parameters.Add("prm_id_curso", MySqlDbType.Int32).Value = d.id_curso;
-                cmd.Parameters.Add("prm_nombre_curso", MySqlDbType.VarChar).Value = d.nombre_curso;
-                cmd.Parameters.Add("prm_numeracion", MySqlDbType.Int32).Value = d.numeracion;
-                cmd.Parameters.Add("prm_nivel", MySqlDbType.Int32).Value = d.nivel;
-                cmd.Parameters.Add("prm_profesor", MySqlDbType.Int32).Value = d.profesor;
+                MySqlCommand cmd = new MySqlCommand($"SentenciaNivel('{Accion}',?,?,?)", GetCon());
+                cmd.Parameters.Add("prm_id_nivel", MySqlDbType.Int32).Value = d.id_nivel;
+                cmd.Parameters.Add("prm_descripcion", MySqlDbType.VarChar).Value = d.descripcion;
                 cmd.Parameters.Add("prm_estado", MySqlDbType.VarChar).Value = d.estado;
                 Conect();
                 id = int.Parse(cmd.ExecuteScalar().ToString());
@@ -30,7 +27,7 @@ namespace Modelo
         public DataTable ListadoGeneral(string prm_parametro = "")
         {
             DataTable dt = new DataTable();
-            MySqlCommand cmd = new MySqlCommand("SListaCursoPorId_cursoOPorNombre_curso(?)", GetCon());
+            MySqlCommand cmd = new MySqlCommand("SListaNivelPorId_nivelOPorDescripcion(?)", GetCon());
             cmd.Parameters.Add("1- prm_parametro", MySqlDbType.VarChar).Value = "%" + prm_parametro + "%";
             MySqlDataAdapter da = new MySqlDataAdapter();
             da.SelectCommand = cmd;
@@ -46,7 +43,7 @@ namespace Modelo
             }
 
             DataTable dt = new DataTable();
-            MySqlCommand cmd = new MySqlCommand("SListaCursoPorSecuenciaDeid_curso(?,?)", GetCon());
+            MySqlCommand cmd = new MySqlCommand("SListaNivelPorSecuenciaDeid_nivel(?,?)", GetCon());
             cmd.Parameters.Add("1- prm_tipoSecuencia", MySqlDbType.VarChar).Value = prm_tipoSecuencia;
             cmd.Parameters.Add("2- prm_idActual", MySqlDbType.Int32).Value = prm_idActual;
             MySqlDataAdapter da = new MySqlDataAdapter();
@@ -54,10 +51,10 @@ namespace Modelo
             da.Fill(dt);
             return dt;
         }
-        public DataTable SCurso(string prm_id)
+        public DataTable SNivel(string prm_id)
         {
             DataTable dt = new DataTable();
-            MySqlCommand cmd = new MySqlCommand("SCurso(?)", GetCon());
+            MySqlCommand cmd = new MySqlCommand("SNivel(?)", GetCon());
             cmd.Parameters.Add("1- prm_id", MySqlDbType.Int32).Value = prm_id;
             MySqlDataAdapter da = new MySqlDataAdapter();
             da.SelectCommand = cmd;
