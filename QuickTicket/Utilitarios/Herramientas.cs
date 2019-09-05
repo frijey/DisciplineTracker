@@ -422,11 +422,16 @@ namespace Discipline_Tracker
                 {
                     ComboBoxRegular myComboBoxRegular = ctrl as ComboBoxRegular;
                     if (myComboBoxRegular.Deshabilitar)
-                        myComboBoxRegular.Enabled = false;
                     {
                         myComboBoxRegular.Enabled = false;
                         myComboBoxRegular.RemoveErrorProvider();
                     }
+                }
+                else if (ctrl is CheckBoxEstado)
+                {
+                    CheckBoxEstado myCheckBoxEstado = ctrl as CheckBoxEstado;
+                    if (myCheckBoxEstado.Deshabilitar)
+                        myCheckBoxEstado.Enabled = false;
                 }
                 else if (ctrl is Panel)
                 {
@@ -476,6 +481,12 @@ namespace Discipline_Tracker
                     if (myComboBoxRegular.Habilitar)
                         myComboBoxRegular.Enabled = true;
                 }
+                else if (ctrl is CheckBoxEstado)
+                {
+                    CheckBoxEstado myCheckBoxEstado = ctrl as CheckBoxEstado;
+                    if (myCheckBoxEstado.Habilitar)
+                        myCheckBoxEstado.Enabled = true;
+                }
                 else if (ctrl is Panel)
                 {
                     HabilitarControles(ctrl as Panel);
@@ -516,6 +527,12 @@ namespace Discipline_Tracker
                     ComboBoxRegular myComboBoxRegular = ctrl as ComboBoxRegular;
                     if (myComboBoxRegular.Limpiar)
                         myComboBoxRegular.Clean();
+                }
+                else if (ctrl is CheckBoxEstado)
+                {
+                    CheckBoxEstado myCheckBoxEstado = ctrl as CheckBoxEstado;
+                    if (myCheckBoxEstado.Limpiar)
+                        myCheckBoxEstado.Checked = !myCheckBoxEstado.DefaultLimpiarValue;
                 }
                 else if (ctrl is Panel)
                 {

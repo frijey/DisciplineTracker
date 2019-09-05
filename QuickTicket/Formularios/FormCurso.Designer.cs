@@ -1,6 +1,6 @@
 ﻿namespace Discipline_Tracker
 {
-    partial class FormProfesor
+    partial class FormCurso
     {
         /// <summary>
         /// Variable del diseñador necesaria.
@@ -104,7 +104,7 @@
             // 
             this.ptbCliente.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.ptbCliente.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.ptbCliente.Image = global::QuickBill_SP.Properties.Resources.teacherB;
+            this.ptbCliente.Image = global::QuickBill_SP.Properties.Resources.house;
             this.ptbCliente.Location = new System.Drawing.Point(647, 99);
             this.ptbCliente.Name = "ptbCliente";
             this.ptbCliente.Size = new System.Drawing.Size(174, 170);
@@ -153,9 +153,9 @@
             this.label2.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(656, 73);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(61, 19);
+            this.label2.Size = new System.Drawing.Size(47, 19);
             this.label2.TabIndex = 136;
-            this.label2.Text = "Profesor";
+            this.label2.Text = "Curso";
             // 
             // txtCodigo
             // 
@@ -173,7 +173,7 @@
             this.txtCodigo.FormatoDinero = false;
             this.txtCodigo.Habilitar = false;
             this.txtCodigo.Limpiar = true;
-            this.txtCodigo.Location = new System.Drawing.Point(746, 74);
+            this.txtCodigo.Location = new System.Drawing.Point(730, 74);
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.Obligatorio = false;
             this.txtCodigo.ReadOnly = true;
@@ -317,7 +317,7 @@
             this.label6.TabIndex = 108;
             this.label6.Text = "Contacto";
             // 
-            // FormProfesor
+            // FormCurso
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -337,7 +337,7 @@
             this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.ptbCliente);
             this.MaximizeBox = false;
-            this.Name = "FormProfesor";
+            this.Name = "FormCurso";
             this.Opacity = 0D;
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

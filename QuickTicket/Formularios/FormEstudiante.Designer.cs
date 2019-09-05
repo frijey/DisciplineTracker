@@ -38,7 +38,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.cmbCurso = new Discipline_Tracker.ComboBoxRegular();
             this.label7 = new System.Windows.Forms.Label();
-            this.chkEstado = new QuickBill_SP.CheckBoxEstado();
+            this.chkEstado = new Discipline_Tracker.CheckBoxEstado();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptbListado)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -337,7 +337,7 @@
         private System.Windows.Forms.Label label5;
         private Discipline_Tracker.ComboBoxRegular cmbCurso;
         private System.Windows.Forms.Label label7;
-        private QuickBill_SP.CheckBoxEstado chkEstado;
+        private Discipline_Tracker.CheckBoxEstado chkEstado;
     }
 }
 
