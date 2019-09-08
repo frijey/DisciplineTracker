@@ -86,6 +86,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Formularios\FormTag.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FormTag.Designer.cs">
+      <DependentUpon>FormTag.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\FormCurso.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -218,6 +224,9 @@
       <DependentUpon>FormMantBase.cs</DependentUpon>
     </Compile>
     <Compile Include="Utilitarios\Herramientas.cs" />
+    <EmbeddedResource Include="Formularios\FormTag.resx">
+      <DependentUpon>FormTag.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FormCurso.resx">
       <DependentUpon>FormCurso.cs</DependentUpon>
     </EmbeddedResource>
