@@ -173,6 +173,8 @@ namespace Discipline_Tracker
         {
             CargarComboBoxNiveles();
             CargarComboBoxProfesores();
+            txtNombre.Focus();
+            txtNombre.Select();
         }
 
         public void CargarComboBoxNiveles()

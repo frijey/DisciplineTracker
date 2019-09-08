@@ -93,6 +93,7 @@
             // btnProveedor
             // 
             this.btnProveedor.BackColor = System.Drawing.Color.Transparent;
+            this.btnProveedor.Enabled = false;
             this.btnProveedor.FlatAppearance.BorderSize = 0;
             this.btnProveedor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnProveedor.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -111,6 +112,7 @@
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.Transparent;
+            this.button1.Enabled = false;
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -163,7 +165,7 @@
             this.btnCompras.Text = "      Profesores";
             this.btnCompras.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCompras.UseVisualStyleBackColor = false;
-            this.btnCompras.Click += new System.EventHandler(this.btnCompra_Click);
+            this.btnCompras.Click += new System.EventHandler(this.btnProfesoresClick);
             this.btnCompras.MouseDown += new System.Windows.Forms.MouseEventHandler(this.ClickDown_Effect);
             this.btnCompras.MouseUp += new System.Windows.Forms.MouseEventHandler(this.ClickUp_DesEffect);
             // 
@@ -183,7 +185,7 @@
             this.btnInventario.Text = "      Tags";
             this.btnInventario.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnInventario.UseVisualStyleBackColor = false;
-            this.btnInventario.Click += new System.EventHandler(this.btnInventario_Click);
+            this.btnInventario.Click += new System.EventHandler(this.btnTagsClick);
             this.btnInventario.MouseDown += new System.Windows.Forms.MouseEventHandler(this.ClickDown_Effect);
             this.btnInventario.MouseUp += new System.Windows.Forms.MouseEventHandler(this.ClickUp_DesEffect);
             // 
@@ -223,7 +225,7 @@
             this.btnClientes.Text = "      Estudiantes";
             this.btnClientes.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnClientes.UseVisualStyleBackColor = false;
-            this.btnClientes.Click += new System.EventHandler(this.btnClientes_Click);
+            this.btnClientes.Click += new System.EventHandler(this.btnEstudiantesClick);
             this.btnClientes.MouseDown += new System.Windows.Forms.MouseEventHandler(this.ClickDown_Effect);
             this.btnClientes.MouseUp += new System.Windows.Forms.MouseEventHandler(this.ClickUp_DesEffect);
             // 
@@ -243,7 +245,7 @@
             this.btnCursos.Text = "      Cursos";
             this.btnCursos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCursos.UseVisualStyleBackColor = false;
-            this.btnCursos.Click += new System.EventHandler(this.btnCursos_Click);
+            this.btnCursos.Click += new System.EventHandler(this.btnCursosClick);
             this.btnCursos.MouseDown += new System.Windows.Forms.MouseEventHandler(this.ClickDown_Effect);
             this.btnCursos.MouseUp += new System.Windows.Forms.MouseEventHandler(this.ClickUp_DesEffect);
             // 

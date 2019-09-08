@@ -7,18 +7,16 @@ using MySql.Data.MySqlClient;
 
 namespace Modelo
 {
-    public partial class Tag : Conexion
+    public partial class Tipo_tag : Conexion
     {
 
-        public int Sentencia(Tag d, string Accion)
+        public int Sentencia(Tipo_tag d, string Accion)
         {
             int id = 0;
             using (GetCon())
             {
-                MySqlCommand cmd = new MySqlCommand($"SentenciaTag('{Accion}',?,?,?,?,?)", GetCon());
-                cmd.Parameters.Add("prm_id_tag", MySqlDbType.Int32).Value = d.id_tag;
-                cmd.Parameters.Add("prm_tipo", MySqlDbType.Int32).Value = d.tipo;
-                cmd.Parameters.Add("prm_sigla", MySqlDbType.VarChar).Value = d.sigla;
+                MySqlCommand cmd = new MySqlCommand($"SentenciaTipo_tag('{Accion}',?,?,?)", GetCon());
+                cmd.Parameters.Add("prm_id_tipo_tag", MySqlDbType.Int32).Value = d.id_tipo_tag;
                 cmd.Parameters.Add("prm_descripcion", MySqlDbType.VarChar).Value = d.descripcion;
                 cmd.Parameters.Add("prm_estado", MySqlDbType.VarChar).Value = d.estado;
                 Conect();
@@ -29,7 +27,7 @@ namespace Modelo
         public DataTable ListadoGeneral(string prm_parametro = "")
         {
             DataTable dt = new DataTable();
-            MySqlCommand cmd = new MySqlCommand("SListaTagPorId_tagOPorTipo(?)", GetCon());
+            MySqlCommand cmd = new MySqlCommand("SListaTipo_tagPorId_tipo_tagOPorDescripcion(?)", GetCon());
             cmd.Parameters.Add("1- prm_parametro", MySqlDbType.VarChar).Value = "%" + prm_parametro + "%";
             MySqlDataAdapter da = new MySqlDataAdapter();
             da.SelectCommand = cmd;
@@ -45,7 +43,7 @@ namespace Modelo
             }
 
             DataTable dt = new DataTable();
-            MySqlCommand cmd = new MySqlCommand("SListaTagPorSecuenciaDeid_tag(?,?)", GetCon());
+            MySqlCommand cmd = new MySqlCommand("SListaTipo_tagPorSecuenciaDeid_tipo_tag(?,?)", GetCon());
             cmd.Parameters.Add("1- prm_tipoSecuencia", MySqlDbType.VarChar).Value = prm_tipoSecuencia;
             cmd.Parameters.Add("2- prm_idActual", MySqlDbType.Int32).Value = prm_idActual;
             MySqlDataAdapter da = new MySqlDataAdapter();
@@ -53,10 +51,10 @@ namespace Modelo
             da.Fill(dt);
             return dt;
         }
-        public DataTable STag(string prm_id)
+        public DataTable STipo_tag(string prm_id)
         {
             DataTable dt = new DataTable();
-            MySqlCommand cmd = new MySqlCommand("STag(?)", GetCon());
+            MySqlCommand cmd = new MySqlCommand("STipo_tag(?)", GetCon());
             cmd.Parameters.Add("1- prm_id", MySqlDbType.Int32).Value = prm_id;
             MySqlDataAdapter da = new MySqlDataAdapter();
             da.SelectCommand = cmd;

@@ -65,6 +65,9 @@
     <Compile Include="Entidades\Nivel.cs" />
     <Compile Include="Entidades\Profesor.cs" />
     <Compile Include="Entidades\Tag.cs" />
+    <Compile Include="Entidades\Tipo_tag.cs" />
+    <Compile Include="Entidades\Tracker.cs" />
+    <Compile Include="Entidades\Tracker_entry.cs" />
     <Compile Include="Estudiante.cs" />
     <Compile Include="Conexion.cs" />
     <Compile Include="Curso.cs" />
@@ -75,6 +78,9 @@
     <Compile Include="Profesor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Tag.cs" />
+    <Compile Include="Tipo_tag.cs" />
+    <Compile Include="Tracker.cs" />
+    <Compile Include="Tracker_entry.cs" />
     <Compile Include="Usuario.cs" />
   </ItemGroup>
   <ItemGroup>

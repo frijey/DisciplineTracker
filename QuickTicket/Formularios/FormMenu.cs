@@ -39,21 +39,22 @@ namespace Discipline_Tracker
 
         }
 
-        private void btnCompra_Click(object sender, EventArgs e)
+        private void btnProfesoresClick(object sender, EventArgs e)
         {
             Form F = new FormProfesor();
             F.ShowDialog();
         }
 
-        private void btnClientes_Click(object sender, EventArgs e)
+        private void btnEstudiantesClick(object sender, EventArgs e)
         {
             Form F = new FormEstudiante();
             F.ShowDialog();
         }
 
-        private void btnInventario_Click(object sender, EventArgs e)
+        private void btnTagsClick(object sender, EventArgs e)
         {
-
+            Form F = new FormTag();
+            F.ShowDialog();
         }
 
         private void btnArticulo_Click(object sender, EventArgs e)
@@ -76,7 +77,7 @@ namespace Discipline_Tracker
             this.Close();
         }
 
-        private void btnCursos_Click(object sender, EventArgs e)
+        private void btnCursosClick(object sender, EventArgs e)
         {
             Form F = new FormCurso();
             F.ShowDialog();

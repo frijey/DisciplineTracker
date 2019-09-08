@@ -143,7 +143,7 @@
             this.txtNombre.Obligatorio = true;
             this.txtNombre.Size = new System.Drawing.Size(259, 17);
             this.txtNombre.TabEnter = true;
-            this.txtNombre.TabIndex = 0;
+            this.txtNombre.TabIndex = 1;
             this.txtNombre.TipoDeValidacion = Discipline_Tracker.TiposDeValidacion.Normal;
             // 
             // label2
@@ -204,7 +204,7 @@
             this.txtApellido.Obligatorio = true;
             this.txtApellido.Size = new System.Drawing.Size(350, 17);
             this.txtApellido.TabEnter = true;
-            this.txtApellido.TabIndex = 1;
+            this.txtApellido.TabIndex = 2;
             this.txtApellido.TipoDeValidacion = Discipline_Tracker.TiposDeValidacion.Normal;
             // 
             // label4
@@ -246,7 +246,7 @@
             this.chkEstado.Obligatorio = true;
             this.chkEstado.Size = new System.Drawing.Size(155, 23);
             this.chkEstado.TabEnter = true;
-            this.chkEstado.TabIndex = 4;
+            this.chkEstado.TabIndex = 0;
             this.chkEstado.Text = "                   Activo                 ";
             this.chkEstado.UseVisualStyleBackColor = false;
             // 
@@ -270,7 +270,7 @@
             this.txtEmail.Obligatorio = true;
             this.txtEmail.Size = new System.Drawing.Size(350, 17);
             this.txtEmail.TabEnter = true;
-            this.txtEmail.TabIndex = 2;
+            this.txtEmail.TabIndex = 3;
             this.txtEmail.TipoDeValidacion = Discipline_Tracker.TiposDeValidacion.Email;
             // 
             // label5
@@ -303,7 +303,7 @@
             this.txtContacto.Obligatorio = true;
             this.txtContacto.Size = new System.Drawing.Size(350, 17);
             this.txtContacto.TabEnter = true;
-            this.txtContacto.TabIndex = 3;
+            this.txtContacto.TabIndex = 4;
             this.txtContacto.TipoDeValidacion = Discipline_Tracker.TiposDeValidacion.Entero;
             // 
             // label6
@@ -342,6 +342,7 @@
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Mantenimiento de Cliente";
+            this.Load += new System.EventHandler(this.FormProfesor_Load);
             this.Controls.SetChildIndex(this.ptbCliente, 0);
             this.Controls.SetChildIndex(this.txtNombre, 0);
             this.Controls.SetChildIndex(this.txtEmail, 0);

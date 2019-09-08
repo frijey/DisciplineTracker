@@ -139,7 +139,7 @@
             // tipo
             // 
             this.tipo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.tipo.DataPropertyName = "nivel";
+            this.tipo.DataPropertyName = "nombre_tipo_tag";
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             this.tipo.DefaultCellStyle = dataGridViewCellStyle5;
             this.tipo.HeaderText = "Tipo de Tag";

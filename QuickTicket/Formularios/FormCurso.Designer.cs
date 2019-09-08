@@ -89,8 +89,8 @@
             // 
             // label8
             // 
-            this.label8.Size = new System.Drawing.Size(236, 20);
-            this.label8.Text = "MANTENIMIENTO DE PROFESORES";
+            this.label8.Size = new System.Drawing.Size(200, 20);
+            this.label8.Text = "MANTENIMIENTO DE CURSOS";
             // 
             // label1
             // 
@@ -142,7 +142,7 @@
             this.txtNombre.Obligatorio = true;
             this.txtNombre.Size = new System.Drawing.Size(259, 17);
             this.txtNombre.TabEnter = true;
-            this.txtNombre.TabIndex = 0;
+            this.txtNombre.TabIndex = 1;
             this.txtNombre.TipoDeValidacion = Discipline_Tracker.TiposDeValidacion.Normal;
             // 
             // label2
@@ -203,7 +203,7 @@
             this.txtNumeracion.Obligatorio = true;
             this.txtNumeracion.Size = new System.Drawing.Size(100, 17);
             this.txtNumeracion.TabEnter = true;
-            this.txtNumeracion.TabIndex = 1;
+            this.txtNumeracion.TabIndex = 2;
             this.txtNumeracion.TipoDeValidacion = Discipline_Tracker.TiposDeValidacion.Entero;
             // 
             // label4
@@ -245,7 +245,7 @@
             this.chkEstado.Obligatorio = true;
             this.chkEstado.Size = new System.Drawing.Size(155, 23);
             this.chkEstado.TabEnter = true;
-            this.chkEstado.TabIndex = 4;
+            this.chkEstado.TabIndex = 0;
             this.chkEstado.Text = "                   Activo                 ";
             this.chkEstado.UseVisualStyleBackColor = false;
             // 
@@ -288,7 +288,7 @@
             this.cmbNivel.Obligatorio = true;
             this.cmbNivel.Size = new System.Drawing.Size(400, 23);
             this.cmbNivel.TabEnter = true;
-            this.cmbNivel.TabIndex = 149;
+            this.cmbNivel.TabIndex = 3;
             // 
             // cmbProfesor
             // 
@@ -307,7 +307,7 @@
             this.cmbProfesor.Obligatorio = true;
             this.cmbProfesor.Size = new System.Drawing.Size(400, 23);
             this.cmbProfesor.TabEnter = true;
-            this.cmbProfesor.TabIndex = 162;
+            this.cmbProfesor.TabIndex = 4;
             // 
             // FormCurso
             // 

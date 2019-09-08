@@ -31,6 +31,7 @@ namespace Discipline_Tracker
         public int CantMin { get; set; } = 0;
         public bool FormatoDinero { get; set; } = false;
         public bool TabEnter { get; set; } = true;
+        public bool ForceUpperCase { get; set; } = true;
         public Panel statusPanel = new Panel();
 
         //Variables de uso
@@ -43,7 +44,6 @@ namespace Discipline_Tracker
 
         public TextBoxRegular()
         {
-            this.CharacterCasing = CharacterCasing.Upper;
         }
 
         public bool Validar()
@@ -181,6 +181,11 @@ namespace Discipline_Tracker
                 this.Font = new Font("Calibri", 10f);
                 this.BorderStyle = BorderStyle.None;
                 this.Multiline = false;
+
+                if (ForceUpperCase)
+                    this.CharacterCasing = CharacterCasing.Upper;
+                else
+                    this.CharacterCasing = CharacterCasing.Normal;
 
                 statusPanel = new Panel()
                 {

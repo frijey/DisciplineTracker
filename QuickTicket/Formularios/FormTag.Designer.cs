@@ -87,8 +87,8 @@
             // 
             // label8
             // 
-            this.label8.Size = new System.Drawing.Size(236, 20);
-            this.label8.Text = "MANTENIMIENTO DE PROFESORES";
+            this.label8.Size = new System.Drawing.Size(181, 20);
+            this.label8.Text = "MANTENIMIENTO DE TAGS";
             // 
             // label1
             // 
@@ -101,7 +101,7 @@
             // ptbCliente
             // 
             this.ptbCliente.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ptbCliente.Image = global::QuickBill_SP.Properties.Resources.house;
+            this.ptbCliente.Image = global::QuickBill_SP.Properties.Resources.tagb;
             this.ptbCliente.Location = new System.Drawing.Point(574, 99);
             this.ptbCliente.Name = "ptbCliente";
             this.ptbCliente.Size = new System.Drawing.Size(247, 201);
@@ -132,6 +132,7 @@
             this.txtCodigo.Deshabilitar = true;
             this.txtCodigo.Enabled = false;
             this.txtCodigo.Font = new System.Drawing.Font("Calibri", 10F);
+            this.txtCodigo.ForceUpperCase = true;
             this.txtCodigo.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.txtCodigo.FormatoDinero = false;
             this.txtCodigo.Habilitar = false;
@@ -157,25 +158,26 @@
             this.txtSiglas.DefaultLimpiarValue = "";
             this.txtSiglas.Deshabilitar = true;
             this.txtSiglas.Font = new System.Drawing.Font("Calibri", 10F);
+            this.txtSiglas.ForceUpperCase = true;
             this.txtSiglas.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.txtSiglas.FormatoDinero = false;
             this.txtSiglas.Habilitar = true;
             this.txtSiglas.Limpiar = true;
-            this.txtSiglas.Location = new System.Drawing.Point(32, 181);
+            this.txtSiglas.Location = new System.Drawing.Point(32, 171);
             this.txtSiglas.MaxLength = 3;
             this.txtSiglas.Name = "txtSiglas";
             this.txtSiglas.Obligatorio = true;
             this.txtSiglas.Size = new System.Drawing.Size(75, 17);
             this.txtSiglas.TabEnter = true;
             this.txtSiglas.TabIndex = 1;
-            this.txtSiglas.TipoDeValidacion = Discipline_Tracker.TiposDeValidacion.Entero;
+            this.txtSiglas.TipoDeValidacion = Discipline_Tracker.TiposDeValidacion.Normal;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Gray;
-            this.label4.Location = new System.Drawing.Point(32, 160);
+            this.label4.Location = new System.Drawing.Point(32, 150);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(43, 18);
             this.label4.TabIndex = 108;
@@ -209,7 +211,7 @@
             this.chkEstado.Obligatorio = true;
             this.chkEstado.Size = new System.Drawing.Size(155, 23);
             this.chkEstado.TabEnter = true;
-            this.chkEstado.TabIndex = 4;
+            this.chkEstado.TabIndex = 0;
             this.chkEstado.Text = "                   Activo                 ";
             this.chkEstado.UseVisualStyleBackColor = false;
             // 
@@ -218,7 +220,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.Gray;
-            this.label5.Location = new System.Drawing.Point(32, 251);
+            this.label5.Location = new System.Drawing.Point(32, 236);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(80, 18);
             this.label5.TabIndex = 108;
@@ -229,13 +231,13 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.Gray;
-            this.label6.Location = new System.Drawing.Point(32, 330);
+            this.label6.Location = new System.Drawing.Point(32, 320);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(61, 18);
             this.label6.TabIndex = 108;
             this.label6.Text = "Profesor";
             // 
-            // cmbProfesor
+            // cmbTipoTag
             // 
             this.cmbTipoTag.BackColor = System.Drawing.Color.White;
             this.cmbTipoTag.DefaultLimpiarValue = 0;
@@ -247,12 +249,12 @@
             this.cmbTipoTag.FormattingEnabled = true;
             this.cmbTipoTag.Habilitar = true;
             this.cmbTipoTag.Limpiar = true;
-            this.cmbTipoTag.Location = new System.Drawing.Point(32, 351);
-            this.cmbTipoTag.Name = "cmbProfesor";
+            this.cmbTipoTag.Location = new System.Drawing.Point(32, 341);
+            this.cmbTipoTag.Name = "cmbTipoTag";
             this.cmbTipoTag.Obligatorio = true;
             this.cmbTipoTag.Size = new System.Drawing.Size(500, 23);
             this.cmbTipoTag.TabEnter = true;
-            this.cmbTipoTag.TabIndex = 162;
+            this.cmbTipoTag.TabIndex = 3;
             // 
             // txtDescripcion
             // 
@@ -260,22 +262,22 @@
             this.txtDescripcion.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtDescripcion.CantidadMinima = true;
             this.txtDescripcion.CantMin = 1;
-            this.txtDescripcion.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtDescripcion.DefaultLimpiarValue = "";
             this.txtDescripcion.Deshabilitar = true;
             this.txtDescripcion.Font = new System.Drawing.Font("Calibri", 10F);
+            this.txtDescripcion.ForceUpperCase = false;
             this.txtDescripcion.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.txtDescripcion.FormatoDinero = false;
             this.txtDescripcion.Habilitar = true;
             this.txtDescripcion.Limpiar = true;
-            this.txtDescripcion.Location = new System.Drawing.Point(32, 272);
-            this.txtDescripcion.MaxLength = 3;
+            this.txtDescripcion.Location = new System.Drawing.Point(32, 257);
+            this.txtDescripcion.MaxLength = 100;
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Obligatorio = true;
             this.txtDescripcion.Size = new System.Drawing.Size(350, 17);
             this.txtDescripcion.TabEnter = true;
-            this.txtDescripcion.TabIndex = 174;
-            this.txtDescripcion.TipoDeValidacion = Discipline_Tracker.TiposDeValidacion.Entero;
+            this.txtDescripcion.TabIndex = 2;
+            this.txtDescripcion.TipoDeValidacion = Discipline_Tracker.TiposDeValidacion.Normal;
             // 
             // FormTag
             // 

@@ -169,5 +169,10 @@ namespace Discipline_Tracker
                 chkEstado.Text = "             Desactivado             ";
         }
 
+        private void FormProfesor_Load(object sender, EventArgs e)
+        {
+            txtNombre.Focus();
+            txtNombre.Select();
+        }
     }
 }

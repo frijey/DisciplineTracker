@@ -17,7 +17,7 @@ namespace Discipline_Tracker
     public partial class FormTag : FormMantBase
     {
         //Clases y Variables
-        Modelo.Curso curso = new Modelo.Curso();
+        Modelo.Tag tag = new Modelo.Tag();
 
         public FormTag()
         {
@@ -31,17 +31,16 @@ namespace Discipline_Tracker
                 //Guardar Curso
                 if (tools.ValidarControles(this))
                 {
-                    curso.id_curso = isNuevoRegistro ? 0 : Convert.ToInt32(txtCodigo.Text);
-                    curso.nombre_curso = txtNombre.Text;
-                    curso.numeracion = Convert.ToInt32(txtSiglas.Text);
-                    curso.nivel = (int)cmbNivel.SelectedValue;
-                    curso.profesor = (int)cmbTipoTag.SelectedValue;
-                    curso.estado = chkEstado.Checked ? "A" : "I";
+                    tag.id_tag = isNuevoRegistro ? 0 : Convert.ToInt32(txtCodigo.Text);
+                    tag.sigla = txtSiglas.Text;
+                    tag.descripcion = txtDescripcion.Text;
+                    tag.tipo = (int)cmbTipoTag.SelectedValue;
+                    tag.estado = chkEstado.Checked ? "A" : "I";
 
-                    int id_nuevo_curso = curso.Sentencia(curso, isNuevoRegistro ? "I" : "U");
-                    txtCodigo.Text = isNuevoRegistro ? id_nuevo_curso.ToString() : curso.id_curso.ToString();
+                    int id_nuevo_curso = tag.Sentencia(tag, isNuevoRegistro ? "I" : "U");
+                    txtCodigo.Text = isNuevoRegistro ? id_nuevo_curso.ToString() : tag.id_tag.ToString();
 
-                    tools.MensajeNormal(this, "Curso guardado con éxito");
+                    tools.MensajeNormal(this, "Tag guardado con éxito");
                     isNuevoRegistro = false;
                     tools.DeshabilitarControles(this);
                     FormatearBotones(ProcesoBotones.Guardar);
@@ -57,16 +56,16 @@ namespace Discipline_Tracker
 
         private void ptbListado_Click(object sender, EventArgs e)
         {
-            Form f = new FormListadoCursos();
+            Form f = new FormListadoTags();
             f.ShowDialog();
 
-            int idEstudianteSeleccionado = (f as FormListadoCursos).SelectedItem;
+            int idTagSeleccionado = (f as FormListadoTags).SelectedItem;
 
-            if (idEstudianteSeleccionado != 0)
+            if (idTagSeleccionado != 0)
                 tools.FuncionLoading(this, async () =>
                 {
                     await Task.Delay(100);
-                    return await CargarEstudiante(idEstudianteSeleccionado); ;
+                    return await CargarTag(idTagSeleccionado); ;
                 });
 
         }
@@ -75,23 +74,22 @@ namespace Discipline_Tracker
         {
             FormatearBotones(ProcesoBotones.Modificar);
             tools.HabilitarControles(this);
-            txtNombre.Focus();
+            txtSiglas.Focus();
         }
 
-        private async Task<bool> CargarEstudiante(int idEstudianteACargar)
+        private async Task<bool> CargarTag(int idEstudianteACargar)
         {
             //Cargar curso en base a un id...
             try
             {
-                string jsonEstudiante = tools.DataTableToJSONWithStringBuilder(curso.SCurso(idEstudianteACargar.ToString()));
-                curso = JsonConvert.DeserializeObject<Curso>(jsonEstudiante);
+                string jsonEstudiante = tools.DataTableToJSONWithStringBuilder(tag.STag(idEstudianteACargar.ToString()));
+                tag = JsonConvert.DeserializeObject<Tag>(jsonEstudiante);
 
-                txtCodigo.Text = curso.id_curso.ToString();
-                txtNombre.Text = curso.nombre_curso;
-                txtSiglas.Text = curso.numeracion.ToString();
-                cmbNivel.SelectedValue = curso.nivel;
-                cmbTipoTag.SelectedValue = curso.profesor;
-                chkEstado.Checked = curso.estado.ToUpper() == "A" ? true : false;
+                txtCodigo.Text = tag.id_tag.ToString();
+                txtSiglas.Text = tag.sigla;
+                txtDescripcion.Text = tag.descripcion;
+                cmbTipoTag.SelectedValue = tag.tipo;
+                chkEstado.Checked = tag.estado.ToUpper() == "A" ? true : false;
 
                 isNuevoRegistro = false;
                 tools.DeshabilitarControles(this);
@@ -139,17 +137,17 @@ namespace Discipline_Tracker
             tools.LimpiarControles(this);
             tools.HabilitarControles(this);
             FormatearBotones(ProcesoBotones.Nuevo);
-            txtNombre.Focus();
+            txtSiglas.Focus();
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
             try
             {
-                if (tools.MensajeOkCansel($"¿Seguro que desea eliminar el curso #{txtCodigo.Text}?"))
+                if (tools.MensajeOkCansel($"¿Seguro que desea eliminar el tag #{txtCodigo.Text}?"))
                 {
-                    curso.id_curso = Convert.ToInt32(txtCodigo.Text);
-                    curso.Sentencia(curso, "D");
+                    tag.id_tag = Convert.ToInt32(txtCodigo.Text);
+                    tag.Sentencia(tag, "D");
                     tools.LimpiarControles(this);
                     tools.DeshabilitarControles(this);
                     FormatearBotones(ProcesoBotones.CancelarNuevoRegistro);
@@ -172,14 +170,15 @@ namespace Discipline_Tracker
         private void FormCurso_Load(object sender, EventArgs e)
         {
             CargarComboBoxTipoTag();
-            CargarComboBoxProfesores();
+            txtSiglas.Focus();
+            txtSiglas.Select();
         }
 
         public void CargarComboBoxTipoTag()
         {
-            cmbTipoTag.ValueMember = "id_nivel";
+            cmbTipoTag.ValueMember = "id_tipo_tag";
             cmbTipoTag.DisplayMember = "descripcion";
-            cmbTipoTag.DataSource = new Nivel().ListadoGeneral();
+            cmbTipoTag.DataSource = new Tipo_tag().ListadoGeneral();
         }
 
     }

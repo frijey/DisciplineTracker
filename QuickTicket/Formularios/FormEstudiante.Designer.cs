@@ -141,7 +141,7 @@
             this.txtNombre.Obligatorio = true;
             this.txtNombre.Size = new System.Drawing.Size(259, 17);
             this.txtNombre.TabEnter = true;
-            this.txtNombre.TabIndex = 0;
+            this.txtNombre.TabIndex = 1;
             this.txtNombre.TipoDeValidacion = Discipline_Tracker.TiposDeValidacion.Normal;
             // 
             // label2
@@ -202,7 +202,7 @@
             this.txtApellido.Obligatorio = true;
             this.txtApellido.Size = new System.Drawing.Size(350, 17);
             this.txtApellido.TabEnter = true;
-            this.txtApellido.TabIndex = 1;
+            this.txtApellido.TabIndex = 2;
             this.txtApellido.TipoDeValidacion = Discipline_Tracker.TiposDeValidacion.Normal;
             // 
             // label4
@@ -244,7 +244,7 @@
             this.cmbCurso.Obligatorio = true;
             this.cmbCurso.Size = new System.Drawing.Size(400, 23);
             this.cmbCurso.TabEnter = true;
-            this.cmbCurso.TabIndex = 2;
+            this.cmbCurso.TabIndex = 3;
             // 
             // label7
             // 
@@ -274,7 +274,7 @@
             this.chkEstado.Obligatorio = true;
             this.chkEstado.Size = new System.Drawing.Size(155, 23);
             this.chkEstado.TabEnter = true;
-            this.chkEstado.TabIndex = 154;
+            this.chkEstado.TabIndex = 0;
             this.chkEstado.Text = "                   Activo                 ";
             this.chkEstado.UseVisualStyleBackColor = false;
             // 

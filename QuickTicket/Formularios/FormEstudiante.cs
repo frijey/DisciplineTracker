@@ -170,6 +170,8 @@ namespace Discipline_Tracker
         private void FormEstudiante_Load(object sender, EventArgs e)
         {
             CargarComboBoxCursos();
+            txtNombre.Focus();
+            txtNombre.Select();
         }
 
         public void CargarComboBoxCursos()

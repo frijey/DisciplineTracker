@@ -7,19 +7,20 @@ using MySql.Data.MySqlClient;
 
 namespace Modelo
 {
-    public partial class Tag : Conexion
+    public partial class Tracker_entry : Conexion
     {
 
-        public int Sentencia(Tag d, string Accion)
+        public int Sentencia(Tracker_entry d, string Accion)
         {
             int id = 0;
             using (GetCon())
             {
-                MySqlCommand cmd = new MySqlCommand($"SentenciaTag('{Accion}',?,?,?,?,?)", GetCon());
-                cmd.Parameters.Add("prm_id_tag", MySqlDbType.Int32).Value = d.id_tag;
-                cmd.Parameters.Add("prm_tipo", MySqlDbType.Int32).Value = d.tipo;
-                cmd.Parameters.Add("prm_sigla", MySqlDbType.VarChar).Value = d.sigla;
-                cmd.Parameters.Add("prm_descripcion", MySqlDbType.VarChar).Value = d.descripcion;
+                MySqlCommand cmd = new MySqlCommand($"SentenciaTracker_entry('{Accion}',?,?,?,?,?,?)", GetCon());
+                cmd.Parameters.Add("prm_id_tracker_entry", MySqlDbType.Int32).Value = d.id_tracker_entry;
+                cmd.Parameters.Add("prm_id_tracker", MySqlDbType.Int32).Value = d.id_tracker;
+                cmd.Parameters.Add("prm_fecha", MySqlDbType.Date).Value = d.fecha;
+                cmd.Parameters.Add("prm_tag", MySqlDbType.Int32).Value = d.tag;
+                cmd.Parameters.Add("prm_comentario", MySqlDbType.VarChar).Value = d.comentario;
                 cmd.Parameters.Add("prm_estado", MySqlDbType.VarChar).Value = d.estado;
                 Conect();
                 id = int.Parse(cmd.ExecuteScalar().ToString());
@@ -29,8 +30,17 @@ namespace Modelo
         public DataTable ListadoGeneral(string prm_parametro = "")
         {
             DataTable dt = new DataTable();
-            MySqlCommand cmd = new MySqlCommand("SListaTagPorId_tagOPorTipo(?)", GetCon());
+            MySqlCommand cmd = new MySqlCommand("SListaTracker_entryPorId_tracker_entryOPorId_tracker(?)", GetCon());
             cmd.Parameters.Add("1- prm_parametro", MySqlDbType.VarChar).Value = "%" + prm_parametro + "%";
+            MySqlDataAdapter da = new MySqlDataAdapter();
+            da.SelectCommand = cmd;
+            da.Fill(dt);
+            return dt;
+        }
+        public DataTable ListaCuartos()
+        {
+            DataTable dt = new DataTable();
+            MySqlCommand cmd = new MySqlCommand("ListaCuartos()", GetCon());
             MySqlDataAdapter da = new MySqlDataAdapter();
             da.SelectCommand = cmd;
             da.Fill(dt);
@@ -45,7 +55,7 @@ namespace Modelo
             }
 
             DataTable dt = new DataTable();
-            MySqlCommand cmd = new MySqlCommand("SListaTagPorSecuenciaDeid_tag(?,?)", GetCon());
+            MySqlCommand cmd = new MySqlCommand("SListaTracker_entryPorSecuenciaDeid_tracker_entry(?,?)", GetCon());
             cmd.Parameters.Add("1- prm_tipoSecuencia", MySqlDbType.VarChar).Value = prm_tipoSecuencia;
             cmd.Parameters.Add("2- prm_idActual", MySqlDbType.Int32).Value = prm_idActual;
             MySqlDataAdapter da = new MySqlDataAdapter();
@@ -53,10 +63,10 @@ namespace Modelo
             da.Fill(dt);
             return dt;
         }
-        public DataTable STag(string prm_id)
+        public DataTable STracker_entry(string prm_id)
         {
             DataTable dt = new DataTable();
-            MySqlCommand cmd = new MySqlCommand("STag(?)", GetCon());
+            MySqlCommand cmd = new MySqlCommand("STracker_entry(?)", GetCon());
             cmd.Parameters.Add("1- prm_id", MySqlDbType.Int32).Value = prm_id;
             MySqlDataAdapter da = new MySqlDataAdapter();
             da.SelectCommand = cmd;
