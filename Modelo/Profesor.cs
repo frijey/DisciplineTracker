@@ -38,6 +38,15 @@ namespace Modelo
             da.Fill(dt);
             return dt;
         }
+        public DataTable ListadoParaComboBox(string prm_parametro = "")
+        {
+            DataTable dt = new DataTable();
+            MySqlCommand cmd = new MySqlCommand("SListaProfesorParaCombo()", GetCon());
+            MySqlDataAdapter da = new MySqlDataAdapter();
+            da.SelectCommand = cmd;
+            da.Fill(dt);
+            return dt;
+        }
         public DataTable ListadoPorSecuencia(string prm_tipoSecuencia, string prm_idActual = "0")
         {
             if (!Char.IsDigit(Convert.ToChar(prm_idActual.Substring(prm_idActual.Length - 1, 1))))

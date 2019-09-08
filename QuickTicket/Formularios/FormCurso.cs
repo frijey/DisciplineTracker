@@ -188,7 +188,7 @@ namespace Discipline_Tracker
         {
             cmbProfesor.ValueMember = "id_profe";
             cmbProfesor.DisplayMember = "nombre_completo";
-            cmbProfesor.DataSource = new Profesor().ListadoGeneral();
+            cmbProfesor.DataSource = new Profesor().ListadoParaComboBox();
         }
     }
 }

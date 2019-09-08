@@ -36,7 +36,8 @@ namespace Discipline_Tracker
 
         private void btnCotizacion_Click(object sender, EventArgs e)
         {
-
+            Form F = new FormTrackerMaster();
+            F.ShowDialog();
         }
 
         private void btnProfesoresClick(object sender, EventArgs e)

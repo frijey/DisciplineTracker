@@ -39,6 +39,16 @@ namespace Modelo
             da.Fill(dt);
             return dt;
         }
+        public DataTable ListadoDeEstudiantesPorCurso(int prm_id_curso = 0)
+        {
+            DataTable dt = new DataTable();
+            MySqlCommand cmd = new MySqlCommand("EstudiantesPorCurso(?)", GetCon());
+            cmd.Parameters.Add("1- prm_id_curso", MySqlDbType.VarChar).Value = prm_id_curso;
+            MySqlDataAdapter da = new MySqlDataAdapter();
+            da.SelectCommand = cmd;
+            da.Fill(dt);
+            return dt;
+        }
         public DataTable ListadoPorSecuencia(string prm_tipoSecuencia, string prm_idActual = "0")
         {
             if (!Char.IsDigit(Convert.ToChar(prm_idActual.Substring(prm_idActual.Length - 1, 1))))
