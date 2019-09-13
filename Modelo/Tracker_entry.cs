@@ -17,7 +17,7 @@ namespace Modelo
             {
                 MySqlCommand cmd = new MySqlCommand($"SentenciaTracker_entry('{Accion}',?,?,?,?,?,?)", GetCon());
                 cmd.Parameters.Add("prm_id_tracker_entry", MySqlDbType.Int32).Value = d.id_tracker_entry;
-                cmd.Parameters.Add("prm_id_tracker", MySqlDbType.Int32).Value = d.id_tracker;
+                cmd.Parameters.Add("prm_id_estudiante", MySqlDbType.Int32).Value = d.id_estudiante;
                 cmd.Parameters.Add("prm_fecha", MySqlDbType.Date).Value = d.fecha;
                 cmd.Parameters.Add("prm_tag", MySqlDbType.Int32).Value = d.tag;
                 cmd.Parameters.Add("prm_comentario", MySqlDbType.VarChar).Value = d.comentario;

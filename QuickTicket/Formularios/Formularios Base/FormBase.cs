@@ -17,6 +17,9 @@ namespace Discipline_Tracker
 
         //clases
         public Herramientas tools = new Herramientas();
+        public DataTable baseDt = new DataTable();
+        public DataTable temporalDt = new DataTable();
+        public DataRow newDataRow;
         private Timer opacityTimer = new Timer() { Enabled = false, Interval = 10 };
         public bool finishClosing = false;
 

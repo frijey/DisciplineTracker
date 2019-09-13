@@ -43,7 +43,17 @@ namespace Modelo
         {
             DataTable dt = new DataTable();
             MySqlCommand cmd = new MySqlCommand("EstudiantesPorCurso(?)", GetCon());
-            cmd.Parameters.Add("1- prm_id_curso", MySqlDbType.VarChar).Value = prm_id_curso;
+            cmd.Parameters.Add("1- prm_id_curso", MySqlDbType.Int32).Value = prm_id_curso;
+            MySqlDataAdapter da = new MySqlDataAdapter();
+            da.SelectCommand = cmd;
+            da.Fill(dt);
+            return dt;
+        }
+        public DataTable ListadoDeEstudiantesParaCombo(int prm_id_curso = 0)
+        {
+            DataTable dt = new DataTable();
+            MySqlCommand cmd = new MySqlCommand("ListaEstudiantesParaComboTracker(?)", GetCon());
+            cmd.Parameters.Add("1- prm_id_curso", MySqlDbType.Int32).Value = prm_id_curso;
             MySqlDataAdapter da = new MySqlDataAdapter();
             da.SelectCommand = cmd;
             da.Fill(dt);

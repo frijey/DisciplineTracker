@@ -605,4 +605,12 @@ namespace Discipline_Tracker
         CancelarRegistroExistente,
         Nuevo
     }
+
+    public enum TipoTagMedalla
+    {
+        DemeritoDeComportamiento,
+        DemeritoDeOrganizacion,
+        Celebracion
+    }
+
 }

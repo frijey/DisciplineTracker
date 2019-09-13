@@ -36,6 +36,16 @@ namespace Modelo
             da.Fill(dt);
             return dt;
         }
+        public DataTable ListadoParaComboPorTipoTag(int prm_id_tipo_tag = 0)
+        {
+            DataTable dt = new DataTable();
+            MySqlCommand cmd = new MySqlCommand("ListaTagsPorTipo(?)", GetCon());
+            cmd.Parameters.Add("1- prm_id_tipo_tag", MySqlDbType.Int32).Value = prm_id_tipo_tag;
+            MySqlDataAdapter da = new MySqlDataAdapter();
+            da.SelectCommand = cmd;
+            da.Fill(dt);
+            return dt;
+        }
         public DataTable ListadoPorSecuencia(string prm_tipoSecuencia, string prm_idActual = "0")
         {
             if (!Char.IsDigit(Convert.ToChar(prm_idActual.Substring(prm_idActual.Length - 1, 1))))

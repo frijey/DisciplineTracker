@@ -229,6 +229,12 @@
     <Compile Include="Formularios\Formularios Base\FormMantBase.Designer.cs">
       <DependentUpon>FormMantBase.cs</DependentUpon>
     </Compile>
+    <Compile Include="Utilitarios\Dialogs\AñadirMedalla.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Utilitarios\Dialogs\AñadirMedalla.Designer.cs">
+      <DependentUpon>AñadirMedalla.cs</DependentUpon>
+    </Compile>
     <Compile Include="Utilitarios\Herramientas.cs" />
     <EmbeddedResource Include="Formularios\FormTag.resx">
       <DependentUpon>FormTag.cs</DependentUpon>
@@ -291,6 +297,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Utilitarios\Controles Personalizados\Loading\LoadingUC.resx">
       <DependentUpon>LoadingUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Utilitarios\Dialogs\AñadirMedalla.resx">
+      <DependentUpon>AñadirMedalla.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="app.config" />
     <None Include="packages.config" />
