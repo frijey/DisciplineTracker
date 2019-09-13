@@ -118,9 +118,6 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="house" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\house.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="maximize" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\maximize.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -145,8 +142,14 @@
   <data name="searchlist" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\searchlist.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="girl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\girl.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="guardar" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\guardar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="tagb" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\tagb.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="boy" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\boy.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -160,29 +163,26 @@
   <data name="cancel" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\cancel.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="config" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\config.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="eliminar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\eliminar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="nails" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\home-nails.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="stud" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\stud.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="femenino" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\femenino.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="image" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\image.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Loading" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Loading.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="articulo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\articulo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="nuevo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\nuevo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="niveles" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\niveles.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="articulotiny" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\articulotiny.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="success" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\success.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -241,6 +241,9 @@
   <data name="Webp.net-resizeimage (4)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Webp.net-resizeimage (4).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="clientes" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\clientes.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="174752-1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\174752-1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -256,8 +259,8 @@
   <data name="compra" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\compra.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="eliminar" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\eliminar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="image" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\image.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="suplidor" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\suplidor.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -268,25 +271,31 @@
   <data name="facturacion" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\facturacion.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="clientes" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\clientes.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Loading" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Loading.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="articulotiny" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\articulotiny.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="stud" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\stud.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="girl" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\girl.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="house" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\house.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="modificar" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\modificar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="niveles" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\niveles.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="config" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\config.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="cuadre" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\cuadre.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="tagb" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\tagb.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="medal" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\medal.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="setting" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\setting.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="rule" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\rule.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

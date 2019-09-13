@@ -383,6 +383,16 @@ namespace QuickBill_SP.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap medal {
+            get {
+                object obj = ResourceManager.GetObject("medal", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap message {
             get {
                 object obj = ResourceManager.GetObject("message", resourceCulture);
@@ -463,6 +473,16 @@ namespace QuickBill_SP.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap rule {
+            get {
+                object obj = ResourceManager.GetObject("rule", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap sale {
             get {
                 object obj = ResourceManager.GetObject("sale", resourceCulture);
@@ -486,6 +506,16 @@ namespace QuickBill_SP.Properties {
         internal static System.Drawing.Bitmap searchlist {
             get {
                 object obj = ResourceManager.GetObject("searchlist", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap setting {
+            get {
+                object obj = ResourceManager.GetObject("setting", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

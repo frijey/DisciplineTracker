@@ -481,6 +481,9 @@
   <ItemGroup>
     <Content Include="check.ico" />
     <Content Include="icon.ico" />
+    <None Include="Resources\rule.png" />
+    <None Include="Resources\setting.png" />
+    <None Include="Resources\medal.png" />
     <None Include="Resources\tagb.png" />
     <None Include="Resources\house.png" />
     <None Include="Resources\teacherB.png" />
