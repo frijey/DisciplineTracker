@@ -16,6 +16,7 @@ namespace Discipline_Tracker
 
         //Objetos necesarios
         Tracker tracker = new Tracker();
+        DataTable cursos = new DataTable();
 
         public FormTrackerMaster()
         {
@@ -37,7 +38,8 @@ namespace Discipline_Tracker
         {
             cmbCurso.ValueMember = "id_curso";
             cmbCurso.DisplayMember = "nombre_curso";
-            cmbCurso.DataSource = new Curso().ListadoGeneral();
+            cursos = new Curso().ListadoGeneral();
+            cmbCurso.DataSource = cursos;
         }
 
         public void CargarComboBoxEstudiantes(int curso)
@@ -138,24 +140,46 @@ namespace Discipline_Tracker
 
         private void btnProcesarclicked(object sender, EventArgs e)
         {
-            DataRowView result = cmbPeriodo.SelectedItem as DataRowView;
+            tools.FuncionLoading(this, async () =>
+            {
+                await Task.Delay(1000);
 
-            DateTime dtIni = Convert.ToDateTime(result["fecha_desde"].ToString());
-            DateTime dtFin = Convert.ToDateTime(result["fecha_hasta"].ToString());
+                try
+                {
 
-            string tipo = (int)cmbEstudiante.SelectedValue > 0 ? "E" : ((int)cmbCurso.SelectedValue > 0 ? "C" : "T");
-            int idCurso = (int)cmbCurso.SelectedValue;
-            int idEstudiante = (int)cmbEstudiante.SelectedValue;
-            string fecha_ini = tools.FormatearFecha(dtIni);
-            string fecha_fin = tools.FormatearFecha(dtFin);
+                    //Llenar Datos de Medallas/Tags
+                    DataRowView result = cmbPeriodo.SelectedItem as DataRowView;
 
-            //Buscar y Formatear Meddallas...
-            DataTable totalMedallas = tracker.ListadoTotalDemeritos(tipo, idCurso, idEstudiante, fecha_ini, fecha_fin);
-            txtTotalComp.Text = totalMedallas.Rows[0][0].ToString();
-            txtTotalOrg.Text = totalMedallas.Rows[0][1].ToString();
-            txtTotalCelebraciones.Text = totalMedallas.Rows[0][2].ToString();
+                    DateTime dtIni = Convert.ToDateTime(result["fecha_desde"].ToString());
+                    DateTime dtFin = Convert.ToDateTime(result["fecha_hasta"].ToString());
 
-            HabilitarDeshabilitarControlesMedalla((int)cmbEstudiante.SelectedValue > 0 ? true : false);
+                    string tipo = (int)cmbEstudiante.SelectedValue > 0 ? "E" : ((int)cmbCurso.SelectedValue > 0 ? "C" : "T");
+                    int idCurso = (int)cmbCurso.SelectedValue;
+                    int idEstudiante = (int)cmbEstudiante.SelectedValue;
+                    string fecha_ini = tools.FormatearFecha(dtIni);
+                    string fecha_fin = tools.FormatearFecha(dtFin);
+
+                    //Buscar y Formatear Meddallas...
+                    DataTable totalMedallas = tracker.ListadoTotalDemeritos(tipo, idCurso, idEstudiante, fecha_ini, fecha_fin);
+                    txtTotalComp.Text = totalMedallas.Rows[0][0].ToString();
+                    txtTotalOrg.Text = totalMedallas.Rows[0][1].ToString();
+                    txtTotalCelebraciones.Text = totalMedallas.Rows[0][2].ToString();
+
+                    HabilitarDeshabilitarControlesMedalla((int)cmbEstudiante.SelectedValue > 0 ? true : false);
+
+                    //Llenar Datos del Estudiante en los Labels...
+                    DataTable student = new Estudiante().SEstudiante(cmbEstudiante.SelectedValue.ToString());
+                    lblCurso.Text = new Curso().SCurso(student.Rows[0]["curso"].ToString()).Rows[0]["nombre_curso"].ToString();
+                    lblNombreEstudiante.Text = student.Rows[0]["nombre"].ToString() + " " + student.Rows[0]["apellido"].ToString();
+
+                }
+                catch (Exception ex)
+                {
+                    tools.MensajeNormal(ex.Message);
+                }
+
+                return true;
+            });
 
         }
 

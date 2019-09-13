@@ -32,26 +32,27 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.txtTotalCelebraciones = new System.Windows.Forms.Button();
-            this.txtTotalOrg = new System.Windows.Forms.Button();
             this.lblNombreEstudiante = new System.Windows.Forms.Button();
             this.dtFechaNuevaMedalla = new System.Windows.Forms.DateTimePicker();
             this.lblCurso = new System.Windows.Forms.Button();
-            this.txtTotalComp = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.panel9 = new System.Windows.Forms.Panel();
             this.btnAgregarCelebracion = new System.Windows.Forms.Button();
             this.btnAgregarDemOrg = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.btnAgregarDemComp = new System.Windows.Forms.Button();
-            this.panel8 = new System.Windows.Forms.Panel();
             this.panel11 = new System.Windows.Forms.Panel();
             this.panel10 = new System.Windows.Forms.Panel();
-            this.panel7 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.panel12 = new System.Windows.Forms.Panel();
+            this.txtTotalCelebraciones = new System.Windows.Forms.Button();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.txtTotalOrg = new System.Windows.Forms.Button();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.panel9 = new System.Windows.Forms.Panel();
+            this.txtTotalComp = new System.Windows.Forms.Button();
             this.cmbEstudiante = new Discipline_Tracker.ComboBoxRegular();
             this.label3 = new System.Windows.Forms.Label();
             this.btnProcesar = new System.Windows.Forms.Button();
@@ -62,20 +63,30 @@
             this.chkPorSemestre = new System.Windows.Forms.RadioButton();
             this.chkTodoElAño = new System.Windows.Forms.RadioButton();
             this.lblTituloFiltroInferior = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.panel13 = new System.Windows.Forms.Panel();
+            this.panel14 = new System.Windows.Forms.Panel();
+            this.panel15 = new System.Windows.Forms.Panel();
+            this.panel16 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.baseDt)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.temporalDt)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMaximize)).BeginInit();
             this.panel5.SuspendLayout();
+            this.panel12.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
             // label8
             // 
             this.label8.Size = new System.Drawing.Size(55, 20);
             this.label8.Text = "Tracker";
+            // 
+            // label1
+            // 
+            this.label1.Visible = false;
             // 
             // cmbCurso
             // 
@@ -89,7 +100,7 @@
             this.cmbCurso.FormattingEnabled = true;
             this.cmbCurso.Habilitar = true;
             this.cmbCurso.Limpiar = true;
-            this.cmbCurso.Location = new System.Drawing.Point(21, 115);
+            this.cmbCurso.Location = new System.Drawing.Point(25, 286);
             this.cmbCurso.Name = "cmbCurso";
             this.cmbCurso.Obligatorio = true;
             this.cmbCurso.Size = new System.Drawing.Size(229, 23);
@@ -102,7 +113,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.Gray;
-            this.label5.Location = new System.Drawing.Point(21, 97);
+            this.label5.Location = new System.Drawing.Point(25, 268);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(71, 19);
             this.label5.TabIndex = 110;
@@ -111,66 +122,34 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.CadetBlue;
-            this.label2.Location = new System.Drawing.Point(166, 61);
+            this.label2.Location = new System.Drawing.Point(166, 54);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(84, 29);
+            this.label2.Size = new System.Drawing.Size(86, 29);
             this.label2.TabIndex = 110;
             this.label2.Text = "Tracker";
             // 
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.Honeydew;
-            this.panel5.Controls.Add(this.txtTotalCelebraciones);
-            this.panel5.Controls.Add(this.txtTotalOrg);
             this.panel5.Controls.Add(this.lblNombreEstudiante);
             this.panel5.Controls.Add(this.dtFechaNuevaMedalla);
             this.panel5.Controls.Add(this.lblCurso);
-            this.panel5.Controls.Add(this.txtTotalComp);
             this.panel5.Controls.Add(this.button1);
-            this.panel5.Controls.Add(this.panel9);
             this.panel5.Controls.Add(this.btnAgregarCelebracion);
             this.panel5.Controls.Add(this.btnAgregarDemOrg);
             this.panel5.Controls.Add(this.label9);
             this.panel5.Controls.Add(this.btnAgregarDemComp);
-            this.panel5.Controls.Add(this.panel8);
             this.panel5.Controls.Add(this.panel11);
             this.panel5.Controls.Add(this.panel10);
-            this.panel5.Controls.Add(this.panel7);
             this.panel5.Controls.Add(this.panel6);
-            this.panel5.Controls.Add(this.pictureBox4);
-            this.panel5.Controls.Add(this.pictureBox3);
-            this.panel5.Controls.Add(this.pictureBox2);
+            this.panel5.Controls.Add(this.panel12);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel5.Location = new System.Drawing.Point(433, 32);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(219, 408);
             this.panel5.TabIndex = 111;
-            // 
-            // txtTotalCelebraciones
-            // 
-            this.txtTotalCelebraciones.FlatAppearance.BorderSize = 0;
-            this.txtTotalCelebraciones.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.txtTotalCelebraciones.Font = new System.Drawing.Font("Calibri", 8F);
-            this.txtTotalCelebraciones.Location = new System.Drawing.Point(146, 18);
-            this.txtTotalCelebraciones.Name = "txtTotalCelebraciones";
-            this.txtTotalCelebraciones.Size = new System.Drawing.Size(61, 21);
-            this.txtTotalCelebraciones.TabIndex = 3;
-            this.txtTotalCelebraciones.Text = "-";
-            this.txtTotalCelebraciones.UseVisualStyleBackColor = true;
-            // 
-            // txtTotalOrg
-            // 
-            this.txtTotalOrg.FlatAppearance.BorderSize = 0;
-            this.txtTotalOrg.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.txtTotalOrg.Font = new System.Drawing.Font("Calibri", 8F);
-            this.txtTotalOrg.Location = new System.Drawing.Point(79, 18);
-            this.txtTotalOrg.Name = "txtTotalOrg";
-            this.txtTotalOrg.Size = new System.Drawing.Size(61, 21);
-            this.txtTotalOrg.TabIndex = 3;
-            this.txtTotalOrg.Text = "-";
-            this.txtTotalOrg.UseVisualStyleBackColor = true;
             // 
             // lblNombreEstudiante
             // 
@@ -207,18 +186,6 @@
             this.lblCurso.Text = "4to B (Secundaria)";
             this.lblCurso.UseVisualStyleBackColor = true;
             // 
-            // txtTotalComp
-            // 
-            this.txtTotalComp.FlatAppearance.BorderSize = 0;
-            this.txtTotalComp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.txtTotalComp.Font = new System.Drawing.Font("Calibri", 8F);
-            this.txtTotalComp.Location = new System.Drawing.Point(12, 18);
-            this.txtTotalComp.Name = "txtTotalComp";
-            this.txtTotalComp.Size = new System.Drawing.Size(61, 21);
-            this.txtTotalComp.TabIndex = 3;
-            this.txtTotalComp.Text = "-";
-            this.txtTotalComp.UseVisualStyleBackColor = true;
-            // 
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(105)))));
@@ -232,14 +199,6 @@
             this.button1.TabIndex = 117;
             this.button1.Text = "-   V E R   D E T A L L E   -";
             this.button1.UseVisualStyleBackColor = false;
-            // 
-            // panel9
-            // 
-            this.panel9.BackColor = System.Drawing.Color.DarkGray;
-            this.panel9.Location = new System.Drawing.Point(159, 40);
-            this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(35, 1);
-            this.panel9.TabIndex = 2;
             // 
             // btnAgregarCelebracion
             // 
@@ -297,14 +256,6 @@
             this.btnAgregarDemComp.UseVisualStyleBackColor = false;
             this.btnAgregarDemComp.Click += new System.EventHandler(this.btnAgregarDemComp_Click);
             // 
-            // panel8
-            // 
-            this.panel8.BackColor = System.Drawing.Color.DarkGray;
-            this.panel8.Location = new System.Drawing.Point(92, 40);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(35, 1);
-            this.panel8.TabIndex = 2;
-            // 
             // panel11
             // 
             this.panel11.BackColor = System.Drawing.Color.DarkGray;
@@ -321,14 +272,6 @@
             this.panel10.Size = new System.Drawing.Size(200, 1);
             this.panel10.TabIndex = 1;
             // 
-            // panel7
-            // 
-            this.panel7.BackColor = System.Drawing.Color.DarkGray;
-            this.panel7.Location = new System.Drawing.Point(25, 40);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(35, 1);
-            this.panel7.TabIndex = 1;
-            // 
             // panel6
             // 
             this.panel6.BackColor = System.Drawing.Color.DarkGray;
@@ -337,35 +280,119 @@
             this.panel6.Size = new System.Drawing.Size(200, 1);
             this.panel6.TabIndex = 1;
             // 
+            // panel12
+            // 
+            this.panel12.BackColor = System.Drawing.Color.White;
+            this.panel12.Controls.Add(this.panel16);
+            this.panel12.Controls.Add(this.panel15);
+            this.panel12.Controls.Add(this.panel14);
+            this.panel12.Controls.Add(this.panel13);
+            this.panel12.Controls.Add(this.txtTotalCelebraciones);
+            this.panel12.Controls.Add(this.pictureBox4);
+            this.panel12.Controls.Add(this.pictureBox2);
+            this.panel12.Controls.Add(this.txtTotalOrg);
+            this.panel12.Controls.Add(this.pictureBox3);
+            this.panel12.Controls.Add(this.panel7);
+            this.panel12.Controls.Add(this.panel8);
+            this.panel12.Controls.Add(this.panel9);
+            this.panel12.Controls.Add(this.txtTotalComp);
+            this.panel12.Location = new System.Drawing.Point(4, 4);
+            this.panel12.Name = "panel12";
+            this.panel12.Size = new System.Drawing.Size(212, 99);
+            this.panel12.TabIndex = 119;
+            // 
+            // txtTotalCelebraciones
+            // 
+            this.txtTotalCelebraciones.BackColor = System.Drawing.Color.LightCyan;
+            this.txtTotalCelebraciones.FlatAppearance.BorderSize = 0;
+            this.txtTotalCelebraciones.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.txtTotalCelebraciones.Font = new System.Drawing.Font("Calibri", 8F);
+            this.txtTotalCelebraciones.Location = new System.Drawing.Point(143, 13);
+            this.txtTotalCelebraciones.Name = "txtTotalCelebraciones";
+            this.txtTotalCelebraciones.Size = new System.Drawing.Size(61, 21);
+            this.txtTotalCelebraciones.TabIndex = 3;
+            this.txtTotalCelebraciones.Text = "-";
+            this.txtTotalCelebraciones.UseVisualStyleBackColor = false;
+            // 
             // pictureBox4
             // 
             this.pictureBox4.Image = global::QuickBill_SP.Properties.Resources.medal;
-            this.pictureBox4.Location = new System.Drawing.Point(146, 47);
+            this.pictureBox4.Location = new System.Drawing.Point(143, 42);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(61, 50);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox4.TabIndex = 0;
             this.pictureBox4.TabStop = false;
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::QuickBill_SP.Properties.Resources.rule;
+            this.pictureBox2.Location = new System.Drawing.Point(9, 42);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(61, 50);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 0;
+            this.pictureBox2.TabStop = false;
+            // 
+            // txtTotalOrg
+            // 
+            this.txtTotalOrg.BackColor = System.Drawing.Color.Cornsilk;
+            this.txtTotalOrg.FlatAppearance.BorderSize = 0;
+            this.txtTotalOrg.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.txtTotalOrg.Font = new System.Drawing.Font("Calibri", 8F);
+            this.txtTotalOrg.Location = new System.Drawing.Point(76, 13);
+            this.txtTotalOrg.Name = "txtTotalOrg";
+            this.txtTotalOrg.Size = new System.Drawing.Size(61, 21);
+            this.txtTotalOrg.TabIndex = 3;
+            this.txtTotalOrg.Text = "-";
+            this.txtTotalOrg.UseVisualStyleBackColor = false;
+            // 
             // pictureBox3
             // 
             this.pictureBox3.Image = global::QuickBill_SP.Properties.Resources.setting;
-            this.pictureBox3.Location = new System.Drawing.Point(79, 47);
+            this.pictureBox3.Location = new System.Drawing.Point(76, 42);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(61, 50);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox3.TabIndex = 0;
             this.pictureBox3.TabStop = false;
             // 
-            // pictureBox2
+            // panel7
             // 
-            this.pictureBox2.Image = global::QuickBill_SP.Properties.Resources.rule;
-            this.pictureBox2.Location = new System.Drawing.Point(12, 47);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(61, 50);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 0;
-            this.pictureBox2.TabStop = false;
+            this.panel7.BackColor = System.Drawing.Color.DarkGray;
+            this.panel7.Location = new System.Drawing.Point(22, 35);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(35, 1);
+            this.panel7.TabIndex = 1;
+            // 
+            // panel8
+            // 
+            this.panel8.BackColor = System.Drawing.Color.DarkGray;
+            this.panel8.Location = new System.Drawing.Point(89, 35);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(35, 1);
+            this.panel8.TabIndex = 2;
+            // 
+            // panel9
+            // 
+            this.panel9.BackColor = System.Drawing.Color.DarkGray;
+            this.panel9.Location = new System.Drawing.Point(156, 35);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(35, 1);
+            this.panel9.TabIndex = 2;
+            // 
+            // txtTotalComp
+            // 
+            this.txtTotalComp.BackColor = System.Drawing.Color.MistyRose;
+            this.txtTotalComp.FlatAppearance.BorderSize = 0;
+            this.txtTotalComp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.txtTotalComp.Font = new System.Drawing.Font("Calibri", 8F);
+            this.txtTotalComp.Location = new System.Drawing.Point(9, 13);
+            this.txtTotalComp.Name = "txtTotalComp";
+            this.txtTotalComp.Size = new System.Drawing.Size(61, 21);
+            this.txtTotalComp.TabIndex = 3;
+            this.txtTotalComp.Text = "-";
+            this.txtTotalComp.UseVisualStyleBackColor = false;
             // 
             // cmbEstudiante
             // 
@@ -379,7 +406,7 @@
             this.cmbEstudiante.FormattingEnabled = true;
             this.cmbEstudiante.Habilitar = true;
             this.cmbEstudiante.Limpiar = true;
-            this.cmbEstudiante.Location = new System.Drawing.Point(21, 181);
+            this.cmbEstudiante.Location = new System.Drawing.Point(25, 338);
             this.cmbEstudiante.Name = "cmbEstudiante";
             this.cmbEstudiante.Obligatorio = true;
             this.cmbEstudiante.Size = new System.Drawing.Size(364, 23);
@@ -391,7 +418,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Gray;
-            this.label3.Location = new System.Drawing.Point(21, 163);
+            this.label3.Location = new System.Drawing.Point(25, 320);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(103, 19);
             this.label3.TabIndex = 115;
@@ -404,7 +431,7 @@
             this.btnProcesar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnProcesar.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnProcesar.ForeColor = System.Drawing.Color.FloralWhite;
-            this.btnProcesar.Location = new System.Drawing.Point(134, 378);
+            this.btnProcesar.Location = new System.Drawing.Point(134, 389);
             this.btnProcesar.Name = "btnProcesar";
             this.btnProcesar.Size = new System.Drawing.Size(170, 30);
             this.btnProcesar.TabIndex = 117;
@@ -418,7 +445,7 @@
             this.label6.Enabled = false;
             this.label6.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.Gray;
-            this.label6.Location = new System.Drawing.Point(132, 264);
+            this.label6.Location = new System.Drawing.Point(134, 139);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(14, 19);
             this.label6.TabIndex = 115;
@@ -430,7 +457,7 @@
             this.label4.Enabled = false;
             this.label4.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Gray;
-            this.label4.Location = new System.Drawing.Point(257, 264);
+            this.label4.Location = new System.Drawing.Point(259, 139);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(14, 19);
             this.label4.TabIndex = 115;
@@ -453,7 +480,7 @@
             "3er Cuarto",
             "4to Cuarto"});
             this.cmbPeriodo.Limpiar = true;
-            this.cmbPeriodo.Location = new System.Drawing.Point(25, 300);
+            this.cmbPeriodo.Location = new System.Drawing.Point(27, 168);
             this.cmbPeriodo.Name = "cmbPeriodo";
             this.cmbPeriodo.Obligatorio = true;
             this.cmbPeriodo.Size = new System.Drawing.Size(377, 23);
@@ -467,7 +494,7 @@
             this.chkPorcuarto.Checked = true;
             this.chkPorcuarto.Font = new System.Drawing.Font("Calibri", 10F);
             this.chkPorcuarto.ForeColor = System.Drawing.Color.DimGray;
-            this.chkPorcuarto.Location = new System.Drawing.Point(45, 264);
+            this.chkPorcuarto.Location = new System.Drawing.Point(47, 139);
             this.chkPorcuarto.Name = "chkPorcuarto";
             this.chkPorcuarto.Size = new System.Drawing.Size(86, 21);
             this.chkPorcuarto.TabIndex = 126;
@@ -481,7 +508,7 @@
             this.chkPorSemestre.AutoSize = true;
             this.chkPorSemestre.Font = new System.Drawing.Font("Calibri", 10F);
             this.chkPorSemestre.ForeColor = System.Drawing.Color.DimGray;
-            this.chkPorSemestre.Location = new System.Drawing.Point(154, 264);
+            this.chkPorSemestre.Location = new System.Drawing.Point(156, 139);
             this.chkPorSemestre.Name = "chkPorSemestre";
             this.chkPorSemestre.Size = new System.Drawing.Size(101, 21);
             this.chkPorSemestre.TabIndex = 127;
@@ -494,7 +521,7 @@
             this.chkTodoElAño.AutoSize = true;
             this.chkTodoElAño.Font = new System.Drawing.Font("Calibri", 10F);
             this.chkTodoElAño.ForeColor = System.Drawing.Color.DimGray;
-            this.chkTodoElAño.Location = new System.Drawing.Point(279, 264);
+            this.chkTodoElAño.Location = new System.Drawing.Point(281, 139);
             this.chkTodoElAño.Name = "chkTodoElAño";
             this.chkTodoElAño.Size = new System.Drawing.Size(91, 21);
             this.chkTodoElAño.TabIndex = 128;
@@ -505,13 +532,60 @@
             // lblTituloFiltroInferior
             // 
             this.lblTituloFiltroInferior.AutoSize = true;
-            this.lblTituloFiltroInferior.Font = new System.Drawing.Font("Calibri", 16F);
+            this.lblTituloFiltroInferior.Font = new System.Drawing.Font("Calibri", 15F);
             this.lblTituloFiltroInferior.ForeColor = System.Drawing.Color.CadetBlue;
-            this.lblTituloFiltroInferior.Location = new System.Drawing.Point(165, 232);
+            this.lblTituloFiltroInferior.Location = new System.Drawing.Point(93, 107);
             this.lblTituloFiltroInferior.Name = "lblTituloFiltroInferior";
-            this.lblTituloFiltroInferior.Size = new System.Drawing.Size(83, 27);
+            this.lblTituloFiltroInferior.Size = new System.Drawing.Size(75, 24);
             this.lblTituloFiltroInferior.TabIndex = 110;
             this.lblTituloFiltroInferior.Text = "Período";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Calibri", 15F);
+            this.label7.ForeColor = System.Drawing.Color.CadetBlue;
+            this.label7.Location = new System.Drawing.Point(43, 232);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(169, 24);
+            this.label7.TabIndex = 110;
+            this.label7.Text = "Curso o Estudiante";
+            // 
+            // panel13
+            // 
+            this.panel13.BackColor = System.Drawing.Color.Black;
+            this.panel13.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel13.Location = new System.Drawing.Point(0, 0);
+            this.panel13.Name = "panel13";
+            this.panel13.Size = new System.Drawing.Size(2, 99);
+            this.panel13.TabIndex = 4;
+            // 
+            // panel14
+            // 
+            this.panel14.BackColor = System.Drawing.Color.Black;
+            this.panel14.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel14.Location = new System.Drawing.Point(210, 0);
+            this.panel14.Name = "panel14";
+            this.panel14.Size = new System.Drawing.Size(2, 99);
+            this.panel14.TabIndex = 5;
+            // 
+            // panel15
+            // 
+            this.panel15.BackColor = System.Drawing.Color.Black;
+            this.panel15.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel15.Location = new System.Drawing.Point(2, 97);
+            this.panel15.Name = "panel15";
+            this.panel15.Size = new System.Drawing.Size(208, 2);
+            this.panel15.TabIndex = 6;
+            // 
+            // panel16
+            // 
+            this.panel16.BackColor = System.Drawing.Color.Black;
+            this.panel16.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel16.Location = new System.Drawing.Point(2, 0);
+            this.panel16.Name = "panel16";
+            this.panel16.Size = new System.Drawing.Size(208, 2);
+            this.panel16.TabIndex = 7;
             // 
             // FormTrackerMaster
             // 
@@ -529,6 +603,7 @@
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.cmbPeriodo);
             this.Controls.Add(this.cmbCurso);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.lblTituloFiltroInferior);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label5);
@@ -540,6 +615,7 @@
             this.Controls.SetChildIndex(this.label5, 0);
             this.Controls.SetChildIndex(this.label2, 0);
             this.Controls.SetChildIndex(this.lblTituloFiltroInferior, 0);
+            this.Controls.SetChildIndex(this.label7, 0);
             this.Controls.SetChildIndex(this.cmbCurso, 0);
             this.Controls.SetChildIndex(this.cmbPeriodo, 0);
             this.Controls.SetChildIndex(this.panel5, 0);
@@ -558,9 +634,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnMaximize)).EndInit();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
+            this.panel12.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -602,5 +679,11 @@
         private System.Windows.Forms.RadioButton chkPorSemestre;
         private System.Windows.Forms.RadioButton chkTodoElAño;
         private System.Windows.Forms.Label lblTituloFiltroInferior;
+        private System.Windows.Forms.Panel panel12;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Panel panel16;
+        private System.Windows.Forms.Panel panel15;
+        private System.Windows.Forms.Panel panel14;
+        private System.Windows.Forms.Panel panel13;
     }
 }

@@ -11,6 +11,7 @@ namespace Modelo
         public int id_tracker_entry { get; set; } = 0;
         public int id_estudiante { get; set; } = 0;
         public DateTime fecha { get; set; }
+        public int tipo_tag { get; set; }
         public int tag { get; set; } = 0;
         public string comentario { get; set; } = "";
         public string estado { get; set; } = "A";

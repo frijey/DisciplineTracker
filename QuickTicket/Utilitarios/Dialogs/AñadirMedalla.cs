@@ -20,6 +20,7 @@ namespace Discipline_Tracker
         public int idEstudiante = 0;
         public string fecha = "";
         public int tag = 0;
+        public int tipoTag = 0;
         public string comentario = "";
         public TipoTagMedalla tipoTagMedalla = TipoTagMedalla.Celebracion;
 
@@ -40,20 +41,21 @@ namespace Discipline_Tracker
             if (tipoTagMedalla == TipoTagMedalla.DemeritoDeComportamiento)
             {
                 lblTitulo.Text = "Añadir Demérito de Comportamiento";
-                CargarComboBoxTipoTag(1);
+                tipoTag = 1;
             }
-            else if (tipoTagMedalla == TipoTagMedalla.DemeritoDeComportamiento)
+            else if (tipoTagMedalla == TipoTagMedalla.DemeritoDeOrganizacion)
             {
                 lblTitulo.Text = "Añadir Demérito de Organización";
-                CargarComboBoxTipoTag(2);
+                tipoTag = 2;
             }
             else
             {
                 lblTitulo.Text = "Añadir Celebración";
-                CargarComboBoxTipoTag(3);
+                tipoTag = 3;
             }
 
             lblTitulo.Location = new Point((this.Width / 2 - lblTitulo.Width / 2), lblTitulo.Location.Y);
+            CargarComboBoxTipoTag(tipoTag);
 
         }
 
@@ -78,6 +80,7 @@ namespace Discipline_Tracker
 
                 tracker_Entry.id_estudiante = idEstudiante;
                 tracker_Entry.fecha = Convert.ToDateTime(fecha);
+                tracker_Entry.tipo_tag = tipoTag;
                 tracker_Entry.tag = (int)cmbTag.SelectedValue;
                 tracker_Entry.comentario = txtComentario.Text.Trim();
                 tracker_Entry.estado = "A";
@@ -90,7 +93,6 @@ namespace Discipline_Tracker
             catch (Exception ex)
             {
                 new Herramientas().MensajeNormal(ex.Message);
-                throw;
             }
         }
     }
