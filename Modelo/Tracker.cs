@@ -62,6 +62,20 @@ namespace Modelo
             da.Fill(dt);
             return dt;
         }
+        public DataTable DetalleTotalDemeritos(string tipo, int prm_id_curso, int prm_id_estudiante, string prm_fecha_ini, string prm_fecha_fin)
+        {
+            DataTable dt = new DataTable();
+            MySqlCommand cmd = new MySqlCommand("DetalleTotalDemeritos(?,?,?,?,?)", GetCon());
+            cmd.Parameters.Add("1- tipo", MySqlDbType.VarChar).Value = tipo;
+            cmd.Parameters.Add("2- prm_id_curso", MySqlDbType.VarChar).Value = prm_id_curso;
+            cmd.Parameters.Add("3- prm_id_estudiante", MySqlDbType.VarChar).Value = prm_id_estudiante;
+            cmd.Parameters.Add("4- prm_fecha_ini", MySqlDbType.VarChar).Value = prm_fecha_ini;
+            cmd.Parameters.Add("5- prm_fecha_fin", MySqlDbType.VarChar).Value = prm_fecha_fin;
+            MySqlDataAdapter da = new MySqlDataAdapter();
+            da.SelectCommand = cmd;
+            da.Fill(dt);
+            return dt;
+        }
         public DataTable ListadoPorSecuencia(string prm_tipoSecuencia, string prm_idActual = "0")
         {
             if (!Char.IsDigit(Convert.ToChar(prm_idActual.Substring(prm_idActual.Length - 1, 1))))

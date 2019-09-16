@@ -40,6 +40,8 @@
             this.numeracion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nivel = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.profe = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.baseDt)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.temporalDt)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMaximize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListado)).BeginInit();
@@ -169,6 +171,8 @@
             this.Load += new System.EventHandler(this.FormListadoClientes_Load);
             this.Controls.SetChildIndex(this.label8, 0);
             this.Controls.SetChildIndex(this.dgvListado, 0);
+            ((System.ComponentModel.ISupportInitialize)(this.baseDt)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.temporalDt)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMaximize)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListado)).EndInit();

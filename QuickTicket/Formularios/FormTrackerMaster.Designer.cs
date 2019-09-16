@@ -44,6 +44,10 @@
             this.panel10 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel12 = new System.Windows.Forms.Panel();
+            this.panel16 = new System.Windows.Forms.Panel();
+            this.panel15 = new System.Windows.Forms.Panel();
+            this.panel14 = new System.Windows.Forms.Panel();
+            this.panel13 = new System.Windows.Forms.Panel();
             this.txtTotalCelebraciones = new System.Windows.Forms.Button();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -64,10 +68,6 @@
             this.chkTodoElAño = new System.Windows.Forms.RadioButton();
             this.lblTituloFiltroInferior = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.panel13 = new System.Windows.Forms.Panel();
-            this.panel14 = new System.Windows.Forms.Panel();
-            this.panel15 = new System.Windows.Forms.Panel();
-            this.panel16 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.baseDt)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.temporalDt)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -199,6 +199,7 @@
             this.button1.TabIndex = 117;
             this.button1.Text = "-   V E R   D E T A L L E   -";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // btnAgregarCelebracion
             // 
@@ -300,6 +301,42 @@
             this.panel12.Name = "panel12";
             this.panel12.Size = new System.Drawing.Size(212, 99);
             this.panel12.TabIndex = 119;
+            // 
+            // panel16
+            // 
+            this.panel16.BackColor = System.Drawing.Color.Black;
+            this.panel16.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel16.Location = new System.Drawing.Point(2, 0);
+            this.panel16.Name = "panel16";
+            this.panel16.Size = new System.Drawing.Size(208, 2);
+            this.panel16.TabIndex = 7;
+            // 
+            // panel15
+            // 
+            this.panel15.BackColor = System.Drawing.Color.Black;
+            this.panel15.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel15.Location = new System.Drawing.Point(2, 97);
+            this.panel15.Name = "panel15";
+            this.panel15.Size = new System.Drawing.Size(208, 2);
+            this.panel15.TabIndex = 6;
+            // 
+            // panel14
+            // 
+            this.panel14.BackColor = System.Drawing.Color.Black;
+            this.panel14.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel14.Location = new System.Drawing.Point(210, 0);
+            this.panel14.Name = "panel14";
+            this.panel14.Size = new System.Drawing.Size(2, 99);
+            this.panel14.TabIndex = 5;
+            // 
+            // panel13
+            // 
+            this.panel13.BackColor = System.Drawing.Color.Black;
+            this.panel13.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel13.Location = new System.Drawing.Point(0, 0);
+            this.panel13.Name = "panel13";
+            this.panel13.Size = new System.Drawing.Size(2, 99);
+            this.panel13.TabIndex = 4;
             // 
             // txtTotalCelebraciones
             // 
@@ -550,42 +587,6 @@
             this.label7.Size = new System.Drawing.Size(169, 24);
             this.label7.TabIndex = 110;
             this.label7.Text = "Curso o Estudiante";
-            // 
-            // panel13
-            // 
-            this.panel13.BackColor = System.Drawing.Color.Black;
-            this.panel13.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel13.Location = new System.Drawing.Point(0, 0);
-            this.panel13.Name = "panel13";
-            this.panel13.Size = new System.Drawing.Size(2, 99);
-            this.panel13.TabIndex = 4;
-            // 
-            // panel14
-            // 
-            this.panel14.BackColor = System.Drawing.Color.Black;
-            this.panel14.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel14.Location = new System.Drawing.Point(210, 0);
-            this.panel14.Name = "panel14";
-            this.panel14.Size = new System.Drawing.Size(2, 99);
-            this.panel14.TabIndex = 5;
-            // 
-            // panel15
-            // 
-            this.panel15.BackColor = System.Drawing.Color.Black;
-            this.panel15.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel15.Location = new System.Drawing.Point(2, 97);
-            this.panel15.Name = "panel15";
-            this.panel15.Size = new System.Drawing.Size(208, 2);
-            this.panel15.TabIndex = 6;
-            // 
-            // panel16
-            // 
-            this.panel16.BackColor = System.Drawing.Color.Black;
-            this.panel16.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel16.Location = new System.Drawing.Point(2, 0);
-            this.panel16.Name = "panel16";
-            this.panel16.Size = new System.Drawing.Size(208, 2);
-            this.panel16.TabIndex = 7;
             // 
             // FormTrackerMaster
             // 

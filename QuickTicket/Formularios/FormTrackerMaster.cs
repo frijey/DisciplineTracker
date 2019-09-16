@@ -18,6 +18,13 @@ namespace Discipline_Tracker
         Tracker tracker = new Tracker();
         DataTable cursos = new DataTable();
 
+        //Datos para Medalla
+        string tipo = "";
+        int idCurso = 0;
+        int idEstudiante = 0;
+        string fecha_ini = "";
+        string fecha_fin = "";
+
         public FormTrackerMaster()
         {
             InitializeComponent();
@@ -153,11 +160,11 @@ namespace Discipline_Tracker
                     DateTime dtIni = Convert.ToDateTime(result["fecha_desde"].ToString());
                     DateTime dtFin = Convert.ToDateTime(result["fecha_hasta"].ToString());
 
-                    string tipo = (int)cmbEstudiante.SelectedValue > 0 ? "E" : ((int)cmbCurso.SelectedValue > 0 ? "C" : "T");
-                    int idCurso = (int)cmbCurso.SelectedValue;
-                    int idEstudiante = (int)cmbEstudiante.SelectedValue;
-                    string fecha_ini = tools.FormatearFecha(dtIni);
-                    string fecha_fin = tools.FormatearFecha(dtFin);
+                    tipo = (int)cmbEstudiante.SelectedValue > 0 ? "E" : ((int)cmbCurso.SelectedValue > 0 ? "C" : "T");
+                    idCurso = (int)cmbCurso.SelectedValue;
+                    idEstudiante = (int)cmbEstudiante.SelectedValue;
+                    fecha_ini = tools.FormatearFecha(dtIni);
+                    fecha_fin = tools.FormatearFecha(dtFin);
 
                     //Buscar y Formatear Meddallas...
                     DataTable totalMedallas = tracker.ListadoTotalDemeritos(tipo, idCurso, idEstudiante, fecha_ini, fecha_fin);
@@ -214,6 +221,12 @@ namespace Discipline_Tracker
         private void btnAgregarCelebracion_Click(object sender, EventArgs e)
         {
             AgregarMedalla(TipoTagMedalla.Celebracion);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Form F = new DetalleDeComportamiento(tipo, idCurso, idEstudiante, fecha_ini, fecha_fin);
+            F.ShowDialog();
         }
     }
 }
