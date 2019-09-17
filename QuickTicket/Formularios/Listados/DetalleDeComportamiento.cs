@@ -22,7 +22,7 @@ namespace Discipline_Tracker
         private string fecha_iniT;
         private string fecha_finT;
 
-        public DetalleDeComportamiento(string tipo, int idCurso, int idEstudiante, string fecha_ini, string fecha_fin)
+        public DetalleDeComportamiento(string txtDescripcion, string tipo, int idCurso, int idEstudiante, string fecha_ini, string fecha_fin)
         {
             InitializeComponent();
             dgvListado.AutoGenerateColumns = false;
@@ -31,6 +31,20 @@ namespace Discipline_Tracker
             this.idEstudianteT = idEstudiante;
             this.fecha_iniT = fecha_ini;
             this.fecha_finT = fecha_fin;
+
+            //Ocultar columnas innecesarias
+            if (idEstudiante > 0)
+            {
+                dgvListado.Columns["curso"].Visible = false;
+                dgvListado.Columns["estudiante"].Visible = false;
+            }
+            else if (idCurso > 0)
+            {
+                dgvListado.Columns["curso"].Visible = false;
+            }
+
+            txtBusqueda.Text = txtDescripcion;
+
         }
 
         private void FormListadoClientes_Load(object sender, EventArgs e)
@@ -67,7 +81,12 @@ namespace Discipline_Tracker
         private void dgvListado_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             SelectedItem = Convert.ToInt32(dgvListado.CurrentRow.Cells["codigo"].Value.ToString());
-            this.Close();
+            Form F = new EditarMedalla(SelectedItem);
+            F.ShowDialog();
+            if ((F as EditarMedalla).guardado)
+            {
+                Buscar();
+            }
         }
     }
 }

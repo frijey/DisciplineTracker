@@ -1,6 +1,6 @@
 ﻿namespace Discipline_Tracker
 {
-    partial class DetalleDeComportamiento
+    partial class ListadoEstudiantesMedallas
     {
         /// <summary>
         /// Required designer variable.
@@ -29,20 +29,16 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvListado = new System.Windows.Forms.DataGridView();
             this.codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.curso = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.estudiante = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.comentario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.demeritos = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.celebraciones = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.baseDt)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.temporalDt)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -53,7 +49,7 @@
             // txtBusqueda
             // 
             this.txtBusqueda.Enabled = false;
-            this.txtBusqueda.Text = "DETALLE DE COMPORTAMIENTO";
+            this.txtBusqueda.Text = "DEMÉRITOS Y CELEBRACIONES - TODOS LOS ESTUDIANTES";
             this.txtBusqueda.TextChanged += new System.EventHandler(this.txtBusqueda_TextChanged);
             // 
             // btnMostrarTodo
@@ -65,8 +61,8 @@
             // 
             // label8
             // 
-            this.label8.Size = new System.Drawing.Size(221, 20);
-            this.label8.Text = "DETALLE DE COMPORTAMIENTO";
+            this.label8.Size = new System.Drawing.Size(210, 20);
+            this.label8.Text = "LISTA MEDALLAS ETUDIANTES";
             // 
             // dgvListado
             // 
@@ -90,19 +86,17 @@
             this.codigo,
             this.curso,
             this.estudiante,
-            this.tipo,
-            this.descripcion,
-            this.comentario,
-            this.fecha});
+            this.demeritos,
+            this.celebraciones});
             this.dgvListado.Cursor = System.Windows.Forms.Cursors.Arrow;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.ControlLight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvListado.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.ControlLight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvListado.DefaultCellStyle = dataGridViewCellStyle5;
             this.dgvListado.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvListado.GridColor = System.Drawing.SystemColors.Control;
             this.dgvListado.Location = new System.Drawing.Point(0, 89);
@@ -119,7 +113,7 @@
             // 
             // codigo
             // 
-            this.codigo.DataPropertyName = "id_tracker_entry";
+            this.codigo.DataPropertyName = "codigo";
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             this.codigo.DefaultCellStyle = dataGridViewCellStyle2;
             this.codigo.HeaderText = "Código";
@@ -139,63 +133,41 @@
             // 
             // estudiante
             // 
-            this.estudiante.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.estudiante.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.estudiante.DataPropertyName = "nombre_estudiante";
             this.estudiante.HeaderText = "Estudiante";
             this.estudiante.Name = "estudiante";
             this.estudiante.ReadOnly = true;
-            this.estudiante.Width = 90;
             // 
-            // tipo
+            // demeritos
             // 
-            this.tipo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.tipo.DataPropertyName = "tipo";
+            this.demeritos.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.demeritos.DataPropertyName = "demeritos";
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.tipo.DefaultCellStyle = dataGridViewCellStyle3;
-            this.tipo.HeaderText = "Tipo";
-            this.tipo.Name = "tipo";
-            this.tipo.ReadOnly = true;
-            this.tipo.Width = 55;
+            this.demeritos.DefaultCellStyle = dataGridViewCellStyle3;
+            this.demeritos.HeaderText = "Deméritos";
+            this.demeritos.Name = "demeritos";
+            this.demeritos.ReadOnly = true;
+            this.demeritos.Width = 85;
             // 
-            // descripcion
+            // celebraciones
             // 
-            this.descripcion.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.descripcion.DataPropertyName = "descripcion";
+            this.celebraciones.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.celebraciones.DataPropertyName = "celebraciones";
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.descripcion.DefaultCellStyle = dataGridViewCellStyle4;
-            this.descripcion.HeaderText = "Descripción";
-            this.descripcion.Name = "descripcion";
-            this.descripcion.ReadOnly = true;
-            this.descripcion.Width = 95;
+            this.celebraciones.DefaultCellStyle = dataGridViewCellStyle4;
+            this.celebraciones.HeaderText = "Celebraciones";
+            this.celebraciones.Name = "celebraciones";
+            this.celebraciones.ReadOnly = true;
+            this.celebraciones.Width = 111;
             // 
-            // comentario
-            // 
-            this.comentario.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.comentario.DataPropertyName = "comentario";
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.comentario.DefaultCellStyle = dataGridViewCellStyle5;
-            this.comentario.HeaderText = "Comentario";
-            this.comentario.Name = "comentario";
-            this.comentario.ReadOnly = true;
-            // 
-            // fecha
-            // 
-            this.fecha.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.fecha.DataPropertyName = "fecha";
-            dataGridViewCellStyle6.Format = "yyyy/MM/dd";
-            this.fecha.DefaultCellStyle = dataGridViewCellStyle6;
-            this.fecha.HeaderText = "Fecha";
-            this.fecha.Name = "fecha";
-            this.fecha.ReadOnly = true;
-            this.fecha.Width = 67;
-            // 
-            // DetalleDeComportamiento
+            // ListadoEstudiantesMedallas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(834, 512);
             this.Controls.Add(this.dgvListado);
-            this.Name = "DetalleDeComportamiento";
+            this.Name = "ListadoEstudiantesMedallas";
             this.Text = "FormListClientes";
             this.Load += new System.EventHandler(this.FormListadoClientes_Load);
             this.Controls.SetChildIndex(this.label8, 0);
@@ -216,9 +188,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn codigo;
         private System.Windows.Forms.DataGridViewTextBoxColumn curso;
         private System.Windows.Forms.DataGridViewTextBoxColumn estudiante;
-        private System.Windows.Forms.DataGridViewTextBoxColumn tipo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn descripcion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn comentario;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fecha;
+        private System.Windows.Forms.DataGridViewTextBoxColumn demeritos;
+        private System.Windows.Forms.DataGridViewTextBoxColumn celebraciones;
     }
 }

@@ -34,14 +34,13 @@
             this.txtBusqueda = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.btnMostrarTodo = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.baseDt)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.temporalDt)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMaximize)).BeginInit();
             this.panel6.SuspendLayout();
             this.panel5.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // pictureBox1
-            // 
             // 
             // label8
             // 
@@ -143,6 +142,8 @@
             this.Controls.SetChildIndex(this.label8, 0);
             this.Controls.SetChildIndex(this.panel5, 0);
             this.Controls.SetChildIndex(this.panel6, 0);
+            ((System.ComponentModel.ISupportInitialize)(this.baseDt)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.temporalDt)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMaximize)).EndInit();
             this.panel6.ResumeLayout(false);

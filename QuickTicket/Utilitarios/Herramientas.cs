@@ -177,7 +177,7 @@ namespace Discipline_Tracker
             return fechaform; //Retornar al la llamada del método; la fecha formateada
         }
 
-        public bool MensajeOkCansel(string cuerpo = "¿Seguro que desea continuar?", string titulo = "Aviso")
+        public bool MensajeOkCancel(string cuerpo = "¿Seguro que desea continuar?", string titulo = "Aviso")
         {
             bool aceptar = false;
 

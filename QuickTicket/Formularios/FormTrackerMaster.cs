@@ -70,8 +70,13 @@ namespace Discipline_Tracker
         {
             if (chkPorcuarto.Checked)
             {
+                pnlRadioCuarto.BackColor = Color.LightBlue;
+
                 chkPorSemestre.Checked = false;
+                pnlRadioSemestre.BackColor = Color.DarkGray;
+
                 chkTodoElAño.Checked = false;
+                pnlRadioAño.BackColor = Color.DarkGray;
 
                 //Add Items Cuarto
                 cmbPeriodo.ValueMember = "idcuarto";
@@ -85,8 +90,13 @@ namespace Discipline_Tracker
         {
             if (chkPorSemestre.Checked)
             {
+                pnlRadioSemestre.BackColor = Color.LightBlue;
+
                 chkPorcuarto.Checked = false;
+                pnlRadioCuarto.BackColor = Color.DarkGray;
+
                 chkTodoElAño.Checked = false;
+                pnlRadioAño.BackColor = Color.DarkGray;
 
                 //Add Items Semestre
                 temporalDt = tracker.ListadoPeriodo();
@@ -122,8 +132,13 @@ namespace Discipline_Tracker
         {
             if (chkTodoElAño.Checked)
             {
+                pnlRadioAño.BackColor = Color.LightBlue;
+
                 chkPorSemestre.Checked = false;
+                pnlRadioSemestre.BackColor = Color.DarkGray;
+
                 chkPorcuarto.Checked = false;
+                pnlRadioCuarto.BackColor = Color.DarkGray;
 
                 //Add items Año Escolar
                 temporalDt = tracker.ListadoPeriodo();
@@ -149,7 +164,7 @@ namespace Discipline_Tracker
         {
             tools.FuncionLoading(this, async () =>
             {
-                await Task.Delay(1000);
+                await Task.Delay(200);
 
                 try
                 {
@@ -168,15 +183,27 @@ namespace Discipline_Tracker
 
                     //Buscar y Formatear Meddallas...
                     DataTable totalMedallas = tracker.ListadoTotalDemeritos(tipo, idCurso, idEstudiante, fecha_ini, fecha_fin);
-                    txtTotalComp.Text = totalMedallas.Rows[0][0].ToString();
-                    txtTotalOrg.Text = totalMedallas.Rows[0][1].ToString();
-                    txtTotalCelebraciones.Text = totalMedallas.Rows[0][2].ToString();
+
+                    double totalMComportamiento = Convert.ToDouble(totalMedallas.Rows[0][0].ToString());
+                    double totalMOrganizacion = Convert.ToDouble(totalMedallas.Rows[0][1].ToString());
+                    double totalMCelebracion = Convert.ToDouble(totalMedallas.Rows[0][2].ToString());
+
+                    txtTotalComp.Text = totalMComportamiento.ToString();
+                    txtTotalOrg.Text = totalMOrganizacion.ToString();
+                    txtTotalCelebraciones.Text = totalMCelebracion.ToString();
+
+                    btnVerDetalle.Enabled = totalMComportamiento + totalMOrganizacion + totalMCelebracion > 0 ? true : false;
 
                     HabilitarDeshabilitarControlesMedalla((int)cmbEstudiante.SelectedValue > 0 ? true : false);
 
                     //Llenar Datos del Estudiante en los Labels...
                     DataTable student = new Estudiante().SEstudiante(cmbEstudiante.SelectedValue.ToString());
-                    lblCurso.Text = new Curso().SCurso(student.Rows[0]["curso"].ToString()).Rows[0]["nombre_curso"].ToString();
+
+                    if ((int)cmbEstudiante.SelectedValue > 0)
+                        lblCurso.Text = new Curso().SCurso(student.Rows[0]["curso"].ToString()).Rows[0]["nombre_curso"].ToString();
+                    else
+                        lblCurso.Text = cmbCurso.Text;
+
                     lblNombreEstudiante.Text = student.Rows[0]["nombre"].ToString() + " " + student.Rows[0]["apellido"].ToString();
 
                 }
@@ -192,10 +219,18 @@ namespace Discipline_Tracker
 
         public void HabilitarDeshabilitarControlesMedalla(bool estado)
         {
+            pnlEditMedallas.Visible = estado;
+
             dtFechaNuevaMedalla.Enabled = estado;
+
             btnAgregarDemComp.Enabled = estado;
+            ptbComp.Enabled = estado;
+
             btnAgregarDemOrg.Enabled = estado;
+            ptbOrg.Enabled = estado;
+
             btnAgregarCelebracion.Enabled = estado;
+            ptbCele.Enabled = estado;
         }
 
         private void btnAgregarDemComp_Click(object sender, EventArgs e)
@@ -225,7 +260,29 @@ namespace Discipline_Tracker
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Form F = new DetalleDeComportamiento(tipo, idCurso, idEstudiante, fecha_ini, fecha_fin);
+            string descripciónBusqueda = "";
+
+            //Ocultar columnas innecesarias
+            if (idEstudiante > 0)
+            {
+                descripciónBusqueda = lblNombreEstudiante.Text + " - " + lblCurso.Text;
+            }
+            else if (idCurso > 0)
+            {
+                descripciónBusqueda = lblCurso.Text;
+            }
+            else
+            {
+                descripciónBusqueda = "Busqueda General";
+            }
+
+            Form F = new DetalleDeComportamiento(descripciónBusqueda, tipo, idCurso, idEstudiante, fecha_ini, fecha_fin);
+            F.ShowDialog();
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            Form F = new ListadoEstudiantesMedallas();
             F.ShowDialog();
         }
     }

@@ -144,7 +144,7 @@ namespace Discipline_Tracker
         {
             try
             {
-                if (tools.MensajeOkCansel($"¿Seguro que desea eliminar el tag #{txtCodigo.Text}?"))
+                if (tools.MensajeOkCancel($"¿Seguro que desea eliminar el tag #{txtCodigo.Text}?"))
                 {
                     tag.id_tag = Convert.ToInt32(txtCodigo.Text);
                     tag.Sentencia(tag, "D");

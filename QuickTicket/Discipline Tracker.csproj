@@ -146,6 +146,12 @@
     <Compile Include="Formularios\Formularios Base\FormListadoBase.Designer.cs">
       <DependentUpon>FormListadoBase.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\Listados\ListadoEstudiantesMedallas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Listados\ListadoEstudiantesMedallas.Designer.cs">
+      <DependentUpon>ListadoEstudiantesMedallas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\Listados\DetalleDeComportamiento.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -235,6 +241,12 @@
     <Compile Include="Formularios\Formularios Base\FormMantBase.Designer.cs">
       <DependentUpon>FormMantBase.cs</DependentUpon>
     </Compile>
+    <Compile Include="Utilitarios\Dialogs\EditarMedalla.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Utilitarios\Dialogs\EditarMedalla.Designer.cs">
+      <DependentUpon>EditarMedalla.cs</DependentUpon>
+    </Compile>
     <Compile Include="Utilitarios\Dialogs\AñadirMedalla.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -275,6 +287,9 @@
     <EmbeddedResource Include="Formularios\Formularios Base\FormMantBase.resx">
       <DependentUpon>FormMantBase.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Listados\ListadoEstudiantesMedallas.resx">
+      <DependentUpon>ListadoEstudiantesMedallas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Listados\DetalleDeComportamiento.resx">
       <DependentUpon>DetalleDeComportamiento.cs</DependentUpon>
     </EmbeddedResource>
@@ -309,6 +324,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Utilitarios\Dialogs\AñadirMedalla.resx">
       <DependentUpon>AñadirMedalla.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Utilitarios\Dialogs\EditarMedalla.resx">
+      <DependentUpon>EditarMedalla.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="app.config" />
     <None Include="packages.config" />

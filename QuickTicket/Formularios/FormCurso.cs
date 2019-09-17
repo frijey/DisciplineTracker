@@ -146,7 +146,7 @@ namespace Discipline_Tracker
         {
             try
             {
-                if (tools.MensajeOkCansel($"¿Seguro que desea eliminar el curso #{txtCodigo.Text}?"))
+                if (tools.MensajeOkCancel($"¿Seguro que desea eliminar el curso #{txtCodigo.Text}?"))
                 {
                     curso.id_curso = Convert.ToInt32(txtCodigo.Text);
                     curso.Sentencia(curso, "D");
